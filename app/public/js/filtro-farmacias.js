@@ -1,3 +1,5 @@
+// Filtro antigo no navegador, não carregado nas páginas atuais.
+// A busca atual usa o formulário GET e a rota /farmacias em router.js.
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('.searchInput');
     const chips = document.querySelectorAll('.categorias-filtro .chip');
@@ -10,17 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function filtrarFarmacias() {
         cards.forEach(card => {
             const nome = card.querySelector('h2').textContent.toLowerCase();
-            const descricao = card.querySelector('.farmacia-info p').textContent.toLowerCase();
-            
+            const descricao = card.querySelector('.farmacia-info p').textContent
+                .toLowerCase();
+
             // Verifica se o texto digitado bate com o nome ou com a descrição
-            const correspondeBusca = nome.includes(termoBusca) || descricao.includes(termoBusca);
-            
+            const correspondeBusca = nome.includes(termoBusca) || descricao
+                .includes(termoBusca);
+
             // Lógica simples para categorias (você pode ajustar conforme os dados reais)
             let correspondeCategoria = true;
             if (categoriaAtiva !== 'Todos') {
                 // Exemplo: se o chip for "Febre", verifica se a descrição contém "antitérmico" ou "febre"
                 const catLower = categoriaAtiva.toLowerCase();
-                correspondeCategoria = nome.includes(catLower) || descricao.includes(catLower);
+                correspondeCategoria = nome.includes(catLower) || descricao
+                    .includes(catLower);
             }
 
             // Mostra ou oculta o card dependendo dos filtros

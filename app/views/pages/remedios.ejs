@@ -1,22 +1,99 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
-    <title>Remédios — BioClicky</title><%- include('../partials/head', { cssPagina: 'remedios' }) %>
-</head><body><%- include('../partials/header') %>
-<main class="secao pagina-lista">
-    <header class="pagina-topo"><span class="sobrelinha">Comparador</span><h1>Remédios</h1><p>Encontre o menor preço disponível para o medicamento que você procura.</p></header>
-    <form action="/remedios" method="GET" class="filtros" role="search">
-        <label><span>Buscar medicamento</span><input type="search" name="q" value="<%= busca %>" placeholder="Nome, laboratório ou princípio ativo"></label>
-        <label><span>Categoria</span><select name="categoria"><option value="">Todas</option><% categorias.forEach(c => { %><option value="<%= c.nome %>" <%= categoria === c.nome ? 'selected' : '' %>><%= c.nome %></option><% }) %></select></label>
-        <button type="submit">Buscar</button>
-    </form>
-    <p class="resultado"><strong><%= remedios.length %></strong> medicamento(s) encontrado(s)</p>
-    <section class="lista-remedios" aria-live="polite">
-        <% if (!remedios.length) { %><div class="vazio"><ion-icon name="search-outline"></ion-icon><h2>Nenhum resultado</h2><p>Tente outro nome ou remova o filtro de categoria.</p></div><% } %>
-        <% remedios.forEach(remedio => { %>
-            <article class="remedio-card">
-                <img src="<%= remedio.imagem %>" alt="Embalagem de <%= remedio.nome %>">
-                <div class="remedio-info"><span class="etiqueta"><%= remedio.categoria %></span><h2><%= remedio.nome %></h2><p><%= remedio.laboratorio %> · <%= remedio.descricao %></p><small>Menor preço em <strong><%= remedio.farmacia %></strong></small></div>
-                <div class="preco"><small>A partir de</small><strong>R$ <%= remedio.menorPreco.toFixed(2).replace('.', ',') %></strong><span><%= remedio.ofertas %> ofertas</span><a href="/farmacias?q=<%= encodeURIComponent(remedio.farmacia) %>">Ver farmácia</a></div>
-            </article>
-        <% }) %>
-    </section>
-</main><%- include('../partials/footer') %></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
+    <title>Remédios — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'remedios' }) %>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+    <!-- Conteúdo principal desta página. -->
+    <main class="secao pagina-lista">
+        <!-- Cabeçalho da página ou desta seção. -->
+        <header class="pagina-topo">
+            <span class="sobrelinha">Comparador</span>
+            <h1>Remédios</h1>
+            <p>Encontre o menor preço disponível para o medicamento que você procura.</p>
+        </header>
+        <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+        <form
+            action="/remedios"
+            method="GET"
+            class="filtros"
+            role="search"
+        >
+            <!-- Identifica o campo pelo mesmo valor de for e id. -->
+            <label>
+                <span>Buscar medicamento</span>
+                <input
+                    type="search"
+                    name="q"
+                    value="<%= busca %>"
+                    placeholder="Nome, laboratório ou princípio ativo"
+                >
+            </label>
+            <!-- Identifica o campo pelo mesmo valor de for e id. -->
+            <label>
+                <span>Categoria</span>
+                <select name="categoria">
+                    <option value="">Todas</option>
+                    <!-- Repete este trecho para cada item enviado pela rota. -->
+                    <% categorias.forEach(c => { %>
+                        <option
+                            value="<%= c.nome %>"
+                            <%= categoria === c.nome ? 'selected' : '' %>
+                        > <%= c.nome %></option>
+                    <% }) %>
+                </select>
+            </label>
+            <!-- Botão: envia o formulário ou executa a ação definida no JavaScript. -->
+            <button type="submit">Buscar</button>
+        </form>
+        <p class="resultado">
+            <strong><%= remedios.length %> </strong> medicamento(s) encontrado(s)
+        </p>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section
+            class="lista-remedios"
+            aria-live="polite"
+        >
+            <!-- Mostra este trecho somente quando a condição for verdadeira. -->
+            <% if (!remedios.length) { %>
+                <div class="vazio">
+                    <ion-icon name="search-outline">
+                    </ion-icon>
+                    <h2>Nenhum resultado</h2>
+                    <p>Tente outro nome ou remova o filtro de categoria.</p>
+                </div>
+            <% } %>
+            <!-- Repete este trecho para cada item enviado pela rota. -->
+            <% remedios.forEach(remedio => { %>
+                <article class="remedio-card">
+                    <img
+                        src="<%= remedio.imagem %>"
+                        alt="Embalagem de <%= remedio.nome %>"
+                    >
+                    <div class="remedio-info">
+                        <span class="etiqueta"><%= remedio.categoria %></span>
+                        <h2><%= remedio.nome %></h2>
+                        <p><%= remedio.laboratorio %> · <%= remedio.descricao %></p>
+                        <small>Menor preço em <strong><%= remedio.farmacia %></strong>
+                        </small>
+                    </div>
+                    <div class="preco">
+                        <small>A partir de</small>
+                        <strong>R$ <%= remedio.menorPreco.toFixed(2).replace('.', ',') %></strong>
+                        <span><%= remedio.ofertas %> ofertas</span>
+                        <a href="/farmacias?q=<%= encodeURIComponent(remedio.farmacia) %>">Ver farmácia</a>
+                    </div>
+                </article>
+            <% }) %>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

@@ -1,2 +1,125 @@
-.sobre-hero { padding:70px 20px; text-align:center; background:var(--verde-claro); }.sobre-hero h1,.sobre-hero p { max-width:790px; margin-inline:auto; }.sobre-hero p { color:var(--cinza); font-size:1.08rem; }.missao { display:grid; gap:28px; align-items:center; }.missao p { color:var(--cinza); font-size:1.06rem; }.missao>ion-icon { justify-self:center; padding:28px; color:var(--verde); background:var(--verde-claro); border-radius:50%; font-size:5rem; }.valores { display:grid; gap:15px; padding-top:0; }.valores article { padding:23px; background:var(--menta); border-radius:var(--raio); }.valores ion-icon { color:var(--verde); font-size:2rem; }.valores h2 { margin:10px 0 6px; font-size:1.25rem; }.valores p { margin:0; color:var(--cinza); }
-@media(min-width:760px){.missao{grid-template-columns:1.5fr 1fr}.valores{grid-template-columns:repeat(3,1fr)}}
+/* Estiliza .sobre-hero. */
+.sobre-hero {
+    /* Define o espaço interno nesta direção. */
+    padding: 36px 20px;
+    /* Alinha o texto dentro do elemento. */
+    text-align: left;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #f1f7f3;
+}
+
+/* Estiliza .sobre-hero h1,.sobre-hero p. */
+.sobre-hero h1,
+.sobre-hero p {
+    /* Limita a largura máxima. */
+    max-width: 790px;
+    /* Define o espaço externo nesta direção. */
+    margin-inline: auto;
+}
+
+/* Mantém o título legível sem ocupar a tela inteira. */
+.sobre-hero h1 {
+    font-size: 2rem;
+}
+
+/* Estiliza .sobre-hero p. */
+.sobre-hero p {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+    /* Define o tamanho do texto. */
+    font-size: 1.08rem;
+}
+
+/* Estiliza .missao. */
+.missao {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define o espaço entre os itens. */
+    gap: 28px;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+}
+
+/* Estiliza .missao p. */
+.missao p {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+    /* Define o tamanho do texto. */
+    font-size: 1.06rem;
+}
+
+/* Estiliza .missao>ion-icon. */
+.missao>ion-icon {
+    justify-self: center;
+    /* Define o espaço interno nesta direção. */
+    padding: 28px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--verde-claro);
+    /* Arredonda os cantos. */
+    border-radius: 50%;
+    /* Define o tamanho do texto. */
+    font-size: 5rem;
+}
+
+/* Estiliza .valores. */
+.valores {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define o espaço entre os itens. */
+    gap: 15px;
+    /* Define o espaço interno nesta direção. */
+    padding-top: 0;
+}
+
+/* Estiliza .valores article. */
+.valores article {
+    /* Define o espaço interno nesta direção. */
+    padding: 23px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: transparent;
+    /* Arredonda os cantos. */
+    border-radius: 0;
+    border-top: 1px solid var(--linha);
+}
+
+/* Estiliza .valores ion-icon. */
+.valores ion-icon {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define o tamanho do texto. */
+    font-size: 2rem;
+}
+
+/* Estiliza .valores h2. */
+.valores h2 {
+    /* Define o espaço externo nesta direção. */
+    margin: 10px 0 6px;
+    /* Define o tamanho do texto. */
+    font-size: 1.25rem;
+}
+
+/* Estiliza .valores p. */
+.valores p {
+    /* Define o espaço externo nesta direção. */
+    margin: 0;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Adapta o layout quando a tela atende a (min-width:760px). */
+@media(min-width:760px) {
+
+    /* Estiliza .missao. */
+    .missao {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: 1.5fr 1fr
+    }
+
+    /* Estiliza .valores. */
+    .valores {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: repeat(3, 1fr)
+    }
+}

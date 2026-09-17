@@ -1,1 +1,65 @@
-<!DOCTYPE html><html lang="pt-BR"><head><title>Meu perfil — BioClicky</title><%- include('../partials/head', { cssPagina: 'perfil' }) %></head><body><%- include('../partials/header') %><main class="secao perfil-pagina"><header><span class="sobrelinha">Minha conta</span><h1>Olá, <%= nome %></h1><p>Atualize os dados usados para personalizar sua experiência.</p></header><section class="perfil-card"><% if (salvo) { %><p class="mensagem sucesso">Alterações salvas com sucesso.</p><% } %><form action="/perfil" method="POST"><label for="email">E-mail</label><input id="email" value="<%= email %>" readonly><label for="telefone">Telefone</label><input id="telefone" name="telefone" type="tel" value="<%= telefone %>" placeholder="(11) 99999-9999"><label for="localizacao">Cidade e estado</label><input id="localizacao" name="localizacao" value="<%= localizacao %>"><button class="botao-principal">Salvar alterações</button></form><form action="/sair" method="POST"><button class="botao-secundario">Sair da conta</button></form></section></main><%- include('../partials/footer') %></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
+    <title>Meu perfil — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'perfil' }) %>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+    <main class="secao perfil-pagina">
+        <!-- Cabeçalho da página ou desta seção. -->
+        <header>
+            <span class="sobrelinha">Minha conta</span>
+            <h1>Olá, <%= nome %></h1>
+            <p>Atualize os dados usados para personalizar sua experiência.</p>
+        </header>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="perfil-card">
+            <!-- Mostra este trecho somente quando a condição for verdadeira. -->
+            <% if (salvo) { %>
+                <p class="mensagem sucesso">Alterações salvas com sucesso.</p>
+            <% } %>
+            <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+            <form
+                action="/perfil"
+                method="POST"
+            >
+                <label for="email">E-mail</label>
+                <input
+                    id="email"
+                    value="<%= email %>"
+                    readonly
+                >
+                <label for="telefone">Telefone</label>
+                <input
+                    id="telefone"
+                    name="telefone"
+                    type="tel"
+                    value="<%= telefone %>"
+                    placeholder="(11) 99999-9999"
+                >
+                <label for="localizacao">Cidade e estado</label>
+                <input
+                    id="localizacao"
+                    name="localizacao"
+                    value="<%= localizacao %>"
+                >
+                <button class="botao-principal">Salvar alterações</button>
+            </form>
+            <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+            <form
+                action="/sair"
+                method="POST"
+            >
+                <button class="botao-secundario">Sair da conta</button>
+            </form>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

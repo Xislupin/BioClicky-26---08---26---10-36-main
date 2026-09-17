@@ -1,3 +1,463 @@
-.admin-login-body { min-height:100vh; display:grid; place-items:center; padding:20px; background:var(--menta); }.admin-login-card { width:min(430px,100%); padding:28px; background:#fff; border:1px solid var(--linha); border-radius:var(--raio); box-shadow:var(--sombra); }.admin-login-logo { display:block; margin-bottom:25px; color:var(--verde); font-size:1.5rem; font-weight:800; }.admin-selo { display:inline-flex; gap:6px; align-items:center; padding:6px 9px; color:var(--verde-escuro); background:var(--verde-claro); border-radius:999px; font-size:.8rem; font-weight:700; }.admin-login-card h1 { margin:12px 0 5px; font-size:2rem; }.admin-login-card>p { color:var(--cinza); }.admin-login-card label { display:block; margin:14px 0 5px; font-weight:700; }.admin-login-card input { width:100%; min-height:48px; padding:10px 12px; border:1px solid var(--linha); border-radius:10px; }.campo-senha { position:relative; }.campo-senha input { padding-right:48px; }.mostrar-senha { position:absolute; top:3px; right:3px; width:42px; height:42px; border:0; background:transparent; color:var(--verde); font-size:1.2rem; }.admin-login-card .botao-principal { width:100%; margin:20px 0 12px; }.credenciais { padding:12px; background:#f6f7f6; border-radius:10px; font-size:.88rem; }
-.admin-body { min-height:100vh; background:#f6f8f7; }.admin-nav { padding:18px; color:#dcefe5; background:#103b2d; }.admin-logo { display:block; margin-bottom:15px; color:#fff; font-size:1.3rem; font-weight:800; }.admin-logo small { color:#9ed2b8; }.admin-nav nav { display:flex; gap:6px; overflow:auto; padding-bottom:5px; }.admin-nav nav a { flex:none; padding:9px 11px; border-radius:8px; font-size:.9rem; }.admin-nav nav a:hover { background:rgba(255,255,255,.1); }.admin-sair { margin-top:13px; padding:8px 12px; color:#fff; background:transparent; border:1px solid rgba(255,255,255,.25); border-radius:8px; }.admin-main { width:min(1180px,100%); padding:28px 16px 60px; }.admin-topo { display:flex; justify-content:space-between; align-items:end; gap:15px; margin-bottom:25px; }.admin-topo h1 { margin-bottom:7px; }.admin-topo p { margin:0; color:var(--cinza); }.admin-estatisticas { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }.admin-estatisticas article { display:grid; gap:5px; padding:18px; background:#fff; border:1px solid var(--linha); border-radius:14px; }.admin-estatisticas ion-icon { color:var(--verde); font-size:1.5rem; }.admin-estatisticas span { color:var(--cinza); }.admin-estatisticas strong { font-size:1.7rem; }.admin-bloco,.admin-tabela { margin-top:20px; padding:20px; background:#fff; border:1px solid var(--linha); border-radius:var(--raio); }.admin-acoes { display:flex; flex-wrap:wrap; gap:10px; }.admin-acoes a { padding:10px 12px; color:var(--verde); border:1px solid var(--linha); border-radius:9px; font-weight:700; }.tabela-cabecalho,.admin-tabela article { display:grid; grid-template-columns:1fr; gap:4px; padding:14px 4px; border-bottom:1px solid var(--linha); }.tabela-cabecalho { display:none; color:var(--cinza); font-size:.8rem; font-weight:700; text-transform:uppercase; }.status { color:var(--verde); font-weight:700; }
-@media(min-width:800px){.admin-body{display:grid;grid-template-columns:230px 1fr}.admin-nav{position:sticky;top:0;height:100vh;padding:28px 18px}.admin-nav nav{display:grid;overflow:visible}.admin-sair{position:absolute;bottom:25px;left:18px}.admin-main{padding:45px 35px}.admin-estatisticas{grid-template-columns:repeat(4,1fr)}.tabela-cabecalho,.admin-tabela article{display:grid;grid-template-columns:1.2fr 1fr .7fr;gap:15px}.tabela-cabecalho{display:grid}}
+/* Estiliza .admin-login-body. */
+.admin-login-body {
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 100vh;
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Centraliza ou alinha os itens nos dois eixos. */
+    place-items: center;
+    /* Define o espaço interno nesta direção. */
+    padding: 20px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--menta);
+}
+
+/* Estiliza .admin-login-card. */
+.admin-login-card {
+    /* Define a largura. */
+    width: min(430px, 100%);
+    /* Define o espaço interno nesta direção. */
+    padding: 28px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fff;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: var(--raio);
+    /* Define a sombra do elemento. */
+    box-shadow: var(--sombra);
+}
+
+/* Estiliza .admin-login-logo. */
+.admin-login-logo {
+    /* Define como os elementos são organizados. */
+    display: block;
+    /* Define o espaço externo nesta direção. */
+    margin-bottom: 25px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define o tamanho do texto. */
+    font-size: 1.5rem;
+    /* Define a espessura das letras. */
+    font-weight: 800;
+}
+
+/* Estiliza .admin-selo. */
+.admin-selo {
+    /* Define como os elementos são organizados. */
+    display: inline-flex;
+    /* Define o espaço entre os itens. */
+    gap: 6px;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+    /* Define o espaço interno nesta direção. */
+    padding: 6px 9px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde-escuro);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--verde-claro);
+    /* Arredonda os cantos. */
+    border-radius: 999px;
+    /* Define o tamanho do texto. */
+    font-size: .8rem;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .admin-login-card h1. */
+.admin-login-card h1 {
+    /* Define o espaço externo nesta direção. */
+    margin: 12px 0 5px;
+    /* Define o tamanho do texto. */
+    font-size: 2rem;
+}
+
+/* Estiliza .admin-login-card>p. */
+.admin-login-card>p {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Estiliza .admin-login-card label. */
+.admin-login-card label {
+    /* Define como os elementos são organizados. */
+    display: block;
+    /* Define o espaço externo nesta direção. */
+    margin: 14px 0 5px;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .admin-login-card input. */
+.admin-login-card input {
+    /* Define a largura. */
+    width: 100%;
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 48px;
+    /* Define o espaço interno nesta direção. */
+    padding: 10px 12px;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: 10px;
+}
+
+/* Estiliza .campo-senha. */
+.campo-senha {
+    /* Define o tipo de posicionamento do elemento. */
+    position: relative;
+}
+
+/* Estiliza .campo-senha input. */
+.campo-senha input {
+    /* Define o espaço interno nesta direção. */
+    padding-right: 48px;
+}
+
+/* Estiliza .mostrar-senha. */
+.mostrar-senha {
+    /* Define o tipo de posicionamento do elemento. */
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    /* Define a largura. */
+    width: 42px;
+    /* Define a altura. */
+    height: 42px;
+    /* Define a borda ao redor do elemento. */
+    border: 0;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: transparent;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define o tamanho do texto. */
+    font-size: 1.2rem;
+}
+
+/* Estiliza .admin-login-card .botao-principal. */
+.admin-login-card .botao-principal {
+    /* Define a largura. */
+    width: 100%;
+    /* Define o espaço externo nesta direção. */
+    margin: 20px 0 12px;
+}
+
+/* Estiliza .credenciais. */
+.credenciais {
+    /* Define o espaço interno nesta direção. */
+    padding: 12px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #f6f7f6;
+    /* Arredonda os cantos. */
+    border-radius: 10px;
+    /* Define o tamanho do texto. */
+    font-size: .88rem;
+}
+
+/* Estiliza .admin-body. */
+.admin-body {
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 100vh;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #f6f8f7;
+}
+
+/* Estiliza .admin-nav. */
+.admin-nav {
+    /* Define o espaço interno nesta direção. */
+    padding: 18px;
+    /* Define a cor do texto ou do ícone. */
+    color: #dcefe5;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #103b2d;
+}
+
+/* Estiliza .admin-logo. */
+.admin-logo {
+    /* Define como os elementos são organizados. */
+    display: block;
+    /* Define o espaço externo nesta direção. */
+    margin-bottom: 15px;
+    /* Define a cor do texto ou do ícone. */
+    color: #fff;
+    /* Define o tamanho do texto. */
+    font-size: 1.3rem;
+    /* Define a espessura das letras. */
+    font-weight: 800;
+}
+
+/* Estiliza .admin-logo small. */
+.admin-logo small {
+    /* Define a cor do texto ou do ícone. */
+    color: #9ed2b8;
+}
+
+/* Estiliza .admin-nav nav. */
+.admin-nav nav {
+    /* Define como os elementos são organizados. */
+    display: flex;
+    /* Define o espaço entre os itens. */
+    gap: 6px;
+    /* Controla o conteúdo que ultrapassa a área disponível. */
+    overflow: auto;
+    /* Define o espaço interno nesta direção. */
+    padding-bottom: 5px;
+}
+
+/* Estiliza .admin-nav nav a. */
+.admin-nav nav a {
+    flex: none;
+    /* Define o espaço interno nesta direção. */
+    padding: 9px 11px;
+    /* Arredonda os cantos. */
+    border-radius: 8px;
+    /* Define o tamanho do texto. */
+    font-size: .9rem;
+}
+
+/* Estiliza .admin-nav nav a:hover. */
+.admin-nav nav a:hover {
+    /* Define a cor ou o preenchimento de fundo. */
+    background: rgba(255, 255, 255, .1);
+}
+
+/* Estiliza .admin-sair. */
+.admin-sair {
+    /* Define o espaço externo nesta direção. */
+    margin-top: 13px;
+    /* Define o espaço interno nesta direção. */
+    padding: 8px 12px;
+    /* Define a cor do texto ou do ícone. */
+    color: #fff;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: transparent;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid rgba(255, 255, 255, .25);
+    /* Arredonda os cantos. */
+    border-radius: 8px;
+}
+
+/* Estiliza .admin-main. */
+.admin-main {
+    /* Define a largura. */
+    width: min(1180px, 100%);
+    /* Define o espaço interno nesta direção. */
+    padding: 28px 16px 60px;
+}
+
+/* Estiliza .admin-topo. */
+.admin-topo {
+    /* Define como os elementos são organizados. */
+    display: flex;
+    /* Distribui os itens no eixo principal. */
+    justify-content: space-between;
+    /* Alinha os itens no eixo transversal. */
+    align-items: end;
+    /* Define o espaço entre os itens. */
+    gap: 15px;
+    /* Define o espaço externo nesta direção. */
+    margin-bottom: 25px;
+}
+
+/* Estiliza .admin-topo h1. */
+.admin-topo h1 {
+    /* Define o espaço externo nesta direção. */
+    margin-bottom: 7px;
+}
+
+/* Estiliza .admin-topo p. */
+.admin-topo p {
+    /* Define o espaço externo nesta direção. */
+    margin: 0;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Estiliza .admin-estatisticas. */
+.admin-estatisticas {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define a quantidade e a largura das colunas. */
+    grid-template-columns: repeat(2, 1fr);
+    /* Define o espaço entre os itens. */
+    gap: 12px;
+}
+
+/* Estiliza .admin-estatisticas article. */
+.admin-estatisticas article {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define o espaço entre os itens. */
+    gap: 5px;
+    /* Define o espaço interno nesta direção. */
+    padding: 18px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fff;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: 14px;
+}
+
+/* Estiliza .admin-estatisticas ion-icon. */
+.admin-estatisticas ion-icon {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define o tamanho do texto. */
+    font-size: 1.5rem;
+}
+
+/* Estiliza .admin-estatisticas span. */
+.admin-estatisticas span {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Estiliza .admin-estatisticas strong. */
+.admin-estatisticas strong {
+    /* Define o tamanho do texto. */
+    font-size: 1.7rem;
+}
+
+/* Estiliza .admin-bloco,.admin-tabela. */
+.admin-bloco,
+.admin-tabela {
+    /* Define o espaço externo nesta direção. */
+    margin-top: 20px;
+    /* Define o espaço interno nesta direção. */
+    padding: 20px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fff;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: var(--raio);
+}
+
+/* Estiliza .admin-acoes. */
+.admin-acoes {
+    /* Define como os elementos são organizados. */
+    display: flex;
+    /* Permite quebrar os itens em novas linhas. */
+    flex-wrap: wrap;
+    /* Define o espaço entre os itens. */
+    gap: 10px;
+}
+
+/* Estiliza .admin-acoes a. */
+.admin-acoes a {
+    /* Define o espaço interno nesta direção. */
+    padding: 10px 12px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: 9px;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .tabela-cabecalho,.admin-tabela article. */
+.tabela-cabecalho,
+.admin-tabela article {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define a quantidade e a largura das colunas. */
+    grid-template-columns: 1fr;
+    /* Define o espaço entre os itens. */
+    gap: 4px;
+    /* Define o espaço interno nesta direção. */
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--linha);
+}
+
+/* Estiliza .tabela-cabecalho. */
+.tabela-cabecalho {
+    /* Define como os elementos são organizados. */
+    display: none;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+    /* Define o tamanho do texto. */
+    font-size: .8rem;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+    /* Altera a apresentação de maiúsculas e minúsculas. */
+    text-transform: uppercase;
+}
+
+/* Estiliza .status. */
+.status {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Adapta o layout quando a tela atende a (min-width:800px). */
+@media(min-width:800px) {
+
+    /* Estiliza .admin-body. */
+    .admin-body {
+        /* Define como os elementos são organizados. */
+        display: grid;
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: 230px 1fr
+    }
+
+    /* Estiliza .admin-nav. */
+    .admin-nav {
+        /* Define o tipo de posicionamento do elemento. */
+        position: sticky;
+        top: 0;
+        /* Define a altura. */
+        height: 100vh;
+        /* Define o espaço interno nesta direção. */
+        padding: 28px 18px
+    }
+
+    /* Estiliza .admin-nav nav. */
+    .admin-nav nav {
+        /* Define como os elementos são organizados. */
+        display: grid;
+        /* Controla o conteúdo que ultrapassa a área disponível. */
+        overflow: visible
+    }
+
+    /* Estiliza .admin-sair. */
+    .admin-sair {
+        /* Define o tipo de posicionamento do elemento. */
+        position: absolute;
+        bottom: 25px;
+        left: 18px
+    }
+
+    /* Estiliza .admin-main. */
+    .admin-main {
+        /* Define o espaço interno nesta direção. */
+        padding: 45px 35px
+    }
+
+    /* Estiliza .admin-estatisticas. */
+    .admin-estatisticas {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: repeat(4, 1fr)
+    }
+
+    /* Estiliza .tabela-cabecalho,.admin-tabela article. */
+    .tabela-cabecalho,
+    .admin-tabela article {
+        /* Define como os elementos são organizados. */
+        display: grid;
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: 1.2fr 1fr .7fr;
+        /* Define o espaço entre os itens. */
+        gap: 15px
+    }
+
+    /* Estiliza .tabela-cabecalho. */
+    .tabela-cabecalho {
+        /* Define como os elementos são organizados. */
+        display: grid
+    }
+}

@@ -1,2 +1,237 @@
-.auth-body { min-height:100vh; background:var(--menta); }.auth-layout { min-height:100vh; display:grid; }.auth-apresentacao { display:flex; flex-direction:column; justify-content:space-between; gap:35px; padding:28px 22px; color:#fff; background:linear-gradient(145deg,var(--verde-escuro),#17855a); }.auth-logo { align-self:flex-start; padding:9px; background:#fff; border-radius:10px; }.auth-logo img { width:145px; }.auth-apresentacao h1 { font-size:2.2rem; }.auth-apresentacao p { color:#dcefe5; }.auth-apresentacao>a:last-child { font-weight:700; }.auth-formulario { display:grid; place-items:center; padding:35px 16px; }.auth-card { width:min(460px,100%); padding:24px; background:#fff; border:1px solid var(--linha); border-radius:var(--raio); box-shadow:var(--sombra); }.auth-card h2 { margin-bottom:6px; }.auth-card>p { color:var(--cinza); }.auth-card label { display:block; margin:15px 0 6px; font-weight:700; }.auth-card input { width:100%; min-height:48px; padding:10px 12px; border:1px solid var(--linha); border-radius:10px; }.label-linha { display:flex; justify-content:space-between; align-items:center; }.label-linha a,.auth-link a { color:var(--verde); font-weight:700; }.campo-senha { position:relative; }.campo-senha input { padding-right:48px; }.mostrar-senha { position:absolute; top:3px; right:3px; width:42px; height:42px; display:grid; place-items:center; color:var(--verde); background:transparent; border:0; font-size:1.25rem; cursor:pointer; }.auth-card>.botao-principal { width:100%; margin-top:20px; }.auth-link { margin:20px 0 0!important; text-align:center; }.auth-card .mensagem { color:var(--perigo); }
-@media(min-width:820px){.auth-layout{grid-template-columns:minmax(320px,42%) 1fr}.auth-apresentacao{padding:48px}.auth-formulario{padding:50px}.auth-card{padding:34px}}
+/* Estiliza .auth-body. */
+.auth-body {
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 100vh;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--menta);
+}
+
+/* Estiliza .auth-layout. */
+.auth-layout {
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 100vh;
+    /* Define como os elementos são organizados. */
+    display: grid;
+}
+
+/* Estiliza .auth-apresentacao. */
+.auth-apresentacao {
+    /* Define como os elementos são organizados. */
+    display: flex;
+    /* Define se os itens ficam em linha ou em coluna. */
+    flex-direction: column;
+    /* Distribui os itens no eixo principal. */
+    justify-content: space-between;
+    /* Define o espaço entre os itens. */
+    gap: 35px;
+    /* Define o espaço interno nesta direção. */
+    padding: 28px 22px;
+    /* Define a cor do texto ou do ícone. */
+    color: #fff;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: linear-gradient(145deg, var(--verde-escuro), #17855a);
+}
+
+/* Estiliza .auth-logo. */
+.auth-logo {
+    align-self: flex-start;
+    /* Define o espaço interno nesta direção. */
+    padding: 9px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fff;
+    /* Arredonda os cantos. */
+    border-radius: 10px;
+}
+
+/* Estiliza .auth-logo img. */
+.auth-logo img {
+    /* Define a largura. */
+    width: 145px;
+}
+
+/* Estiliza .auth-apresentacao h1. */
+.auth-apresentacao h1 {
+    /* Define o tamanho do texto. */
+    font-size: 2.2rem;
+}
+
+/* Estiliza .auth-apresentacao p. */
+.auth-apresentacao p {
+    /* Define a cor do texto ou do ícone. */
+    color: #dcefe5;
+}
+
+/* Estiliza .auth-apresentacao>a:last-child. */
+.auth-apresentacao>a:last-child {
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .auth-formulario. */
+.auth-formulario {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Centraliza ou alinha os itens nos dois eixos. */
+    place-items: center;
+    /* Define o espaço interno nesta direção. */
+    padding: 35px 16px;
+}
+
+/* Estiliza .auth-card. */
+.auth-card {
+    /* Define a largura. */
+    width: min(460px, 100%);
+    /* Define o espaço interno nesta direção. */
+    padding: 24px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fff;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: var(--raio);
+    /* Define a sombra do elemento. */
+    box-shadow: var(--sombra);
+}
+
+/* Estiliza .auth-card h2. */
+.auth-card h2 {
+    /* Define o espaço externo nesta direção. */
+    margin-bottom: 6px;
+}
+
+/* Estiliza .auth-card>p. */
+.auth-card>p {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Estiliza .auth-card label. */
+.auth-card label {
+    /* Define como os elementos são organizados. */
+    display: block;
+    /* Define o espaço externo nesta direção. */
+    margin: 15px 0 6px;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .auth-card input. */
+.auth-card input {
+    /* Define a largura. */
+    width: 100%;
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 48px;
+    /* Define o espaço interno nesta direção. */
+    padding: 10px 12px;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: 10px;
+}
+
+/* Estiliza .label-linha. */
+.label-linha {
+    /* Define como os elementos são organizados. */
+    display: flex;
+    /* Distribui os itens no eixo principal. */
+    justify-content: space-between;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+}
+
+/* Estiliza .label-linha a,.auth-link a. */
+.label-linha a,
+.auth-link a {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .campo-senha. */
+.campo-senha {
+    /* Define o tipo de posicionamento do elemento. */
+    position: relative;
+}
+
+/* Estiliza .campo-senha input. */
+.campo-senha input {
+    /* Define o espaço interno nesta direção. */
+    padding-right: 48px;
+}
+
+/* Estiliza .mostrar-senha. */
+.mostrar-senha {
+    /* Define o tipo de posicionamento do elemento. */
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    /* Define a largura. */
+    width: 42px;
+    /* Define a altura. */
+    height: 42px;
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Centraliza ou alinha os itens nos dois eixos. */
+    place-items: center;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: transparent;
+    /* Define a borda ao redor do elemento. */
+    border: 0;
+    /* Define o tamanho do texto. */
+    font-size: 1.25rem;
+    /* Define o ponteiro mostrado ao passar sobre o elemento. */
+    cursor: pointer;
+}
+
+/* Estiliza .auth-card>.botao-principal. */
+.auth-card>.botao-principal {
+    /* Define a largura. */
+    width: 100%;
+    /* Define o espaço externo nesta direção. */
+    margin-top: 20px;
+}
+
+/* Estiliza .auth-link. */
+.auth-link {
+    /* Define o espaço externo nesta direção. */
+    margin: 20px 0 0 !important;
+    /* Alinha o texto dentro do elemento. */
+    text-align: center;
+}
+
+/* Estiliza .auth-card .mensagem. */
+.auth-card .mensagem {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--perigo);
+}
+
+/* Adapta o layout quando a tela atende a (min-width:820px). */
+@media(min-width:820px) {
+
+    /* Estiliza .auth-layout. */
+    .auth-layout {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: minmax(320px, 42%) 1fr
+    }
+
+    /* Estiliza .auth-apresentacao. */
+    .auth-apresentacao {
+        /* Define o espaço interno nesta direção. */
+        padding: 48px
+    }
+
+    /* Estiliza .auth-formulario. */
+    .auth-formulario {
+        /* Define o espaço interno nesta direção. */
+        padding: 50px
+    }
+
+    /* Estiliza .auth-card. */
+    .auth-card {
+        /* Define o espaço interno nesta direção. */
+        padding: 34px
+    }
+}

@@ -1,7 +1,56 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
-    <title>Sobre — BioClicky</title><%- include('../partials/head', { cssPagina: 'sobre' }) %>
-</head><body><%- include('../partials/header') %>
-<main><section class="sobre-hero"><span class="sobrelinha">Nosso propósito</span><h1>Saúde acessível começa com informação clara</h1><p>O BioClicky nasceu para ajudar pessoas, especialmente idosos e suas famílias, a comparar preços de medicamentos sem enfrentar telas complicadas.</p></section>
-<section class="secao missao"><div><span class="sobrelinha">Nossa missão</span><h2>Economizar tempo e dinheiro</h2><p>Reunimos preços de diferentes farmácias em uma experiência simples, legível e direta. Assim, o usuário pode tomar uma decisão melhor antes de sair de casa.</p></div><ion-icon name="heart-outline"></ion-icon></section>
-<section class="secao valores"><article><ion-icon name="eye-outline"></ion-icon><h2>Clareza</h2><p>Informações fáceis de encontrar e entender.</p></article><article><ion-icon name="accessibility-outline"></ion-icon><h2>Acessibilidade</h2><p>Botões grandes, bom contraste e uso simples.</p></article><article><ion-icon name="shield-checkmark-outline"></ion-icon><h2>Responsabilidade</h2><p>Comparar preços sem incentivar automedicação.</p></article></section>
-</main><%- include('../partials/footer') %></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
+    <title>Sobre — BioClicky</title>
+    <%- include('../partials/head', { cssPagina: 'sobre' }) %>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+    <!-- Conteúdo principal desta página. -->
+    <main>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="sobre-hero">
+            <h1>Sobre o BioClicky</h1>
+            <p>O BioClicky nasceu para ajudar pessoas, especialmente idosos e suas famílias, a
+                comparar preços de medicamentos sem enfrentar telas complicadas.</p>
+        </section>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="secao missao">
+            <div>
+                <h2>Por que criamos o site?</h2>
+                <p>Reunimos preços de diferentes farmácias em uma experiência simples, legível e
+                    direta. Assim, o usuário pode tomar uma decisão melhor antes de sair de casa.
+                </p>
+            </div>
+            <ion-icon name="heart-outline">
+            </ion-icon>
+        </section>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="secao valores">
+            <article>
+                <ion-icon name="eye-outline">
+                </ion-icon>
+                <h2>Clareza</h2>
+                <p>Informações fáceis de encontrar e entender.</p>
+            </article>
+            <article>
+                <ion-icon name="accessibility-outline">
+                </ion-icon>
+                <h2>Acessibilidade</h2>
+                <p>Botões grandes, bom contraste e uso simples.</p>
+            </article>
+            <article>
+                <ion-icon name="shield-checkmark-outline">
+                </ion-icon>
+                <h2>Responsabilidade</h2>
+                <p>Comparar preços sem incentivar automedicação.</p>
+            </article>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

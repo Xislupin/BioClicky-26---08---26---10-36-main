@@ -1,13 +1,76 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
-    <title>Farmácias — BioClicky</title><%- include('../partials/head', { cssPagina: 'farmacias' }) %>
-</head><body><%- include('../partials/header') %>
-<main class="secao pagina-lista">
-    <header class="pagina-topo"><span class="sobrelinha">Onde encontrar</span><h1>Farmácias parceiras</h1><p>Consulte endereço, contato e avaliação das farmácias.</p></header>
-    <form action="/farmacias" method="GET" class="busca-farmacia" role="search"><label for="q">Buscar farmácia ou cidade</label><div><input id="q" type="search" name="q" value="<%= busca %>" placeholder="Ex.: Drogasil ou São Paulo"><button>Buscar</button></div></form>
-    <section class="grade-farmacias">
-        <% if (!farmacias.length) { %><div class="vazio"><h2>Nenhuma farmácia encontrada</h2><a href="/farmacias">Limpar busca</a></div><% } %>
-        <% farmacias.forEach(farmacia => { %>
-            <article class="farmacia-card"><div class="farmacia-icone"><ion-icon name="business-outline"></ion-icon></div><div><span class="parceira"><ion-icon name="checkmark-circle"></ion-icon> Parceira verificada</span><h2><%= farmacia.nome %></h2><p><ion-icon name="star"></ion-icon> <%= farmacia.nota %> · <%= farmacia.cidade %></p><address><%= farmacia.endereco %></address><a href="tel:<%= farmacia.telefone.replace(/\D/g, '') %>"><%= farmacia.telefone %></a></div></article>
-        <% }) %>
-    </section>
-</main><%- include('../partials/footer') %></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
+    <title>Farmácias — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'farmacias' }) %>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+    <!-- Conteúdo principal desta página. -->
+    <main class="secao pagina-lista">
+        <!-- Cabeçalho da página ou desta seção. -->
+        <header class="pagina-topo">
+            <span class="sobrelinha">Onde encontrar</span>
+            <h1>Farmácias parceiras</h1>
+            <p>Consulte endereço, contato e avaliação das farmácias.</p>
+        </header>
+        <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+        <form
+            action="/farmacias"
+            method="GET"
+            class="busca-farmacia"
+            role="search"
+        >
+            <label for="q">Buscar farmácia ou cidade</label>
+            <div>
+                <input
+                    id="q"
+                    type="search"
+                    name="q"
+                    value="<%= busca %>"
+                    placeholder="Ex.: Drogasil ou São Paulo"
+                >
+                <button>Buscar</button>
+            </div>
+        </form>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="grade-farmacias">
+            <!-- Mostra este trecho somente quando a condição for verdadeira. -->
+            <% if (!farmacias.length) { %>
+                <div class="vazio">
+                    <h2>Nenhuma farmácia encontrada</h2>
+                    <a href="/farmacias">Limpar busca</a>
+                </div>
+            <% } %>
+            <!-- Repete este trecho para cada item enviado pela rota. -->
+            <% farmacias.forEach(farmacia => { %>
+                <article class="farmacia-card">
+                    <div class="farmacia-icone">
+                        <ion-icon name="business-outline">
+                        </ion-icon>
+                    </div>
+                    <div>
+                        <span class="parceira">
+                            <ion-icon name="checkmark-circle">
+                            </ion-icon> Parceira verificada
+                        </span>
+                        <h2><%= farmacia.nome %> </h2>
+                        <p>
+                            <ion-icon name="star">
+                            </ion-icon> <%= farmacia.nota %> · <%= farmacia.cidade %>
+                        </p>
+                        <address><%= farmacia.endereco %></address>
+                        <a href="tel:<%= farmacia.telefone.replace(/\D/g, '') %>"><%= farmacia.telefone %></a>
+                    </div>
+                </article>
+            <% }) %>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

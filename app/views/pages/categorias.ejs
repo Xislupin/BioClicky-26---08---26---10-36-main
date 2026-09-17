@@ -1,10 +1,45 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
-    <title>Categorias — BioClicky</title><%- include('../partials/head', { cssPagina: 'categorias' }) %>
-</head><body><%- include('../partials/header') %>
-<main class="secao pagina-lista"><header class="pagina-topo"><span class="sobrelinha">Encontre mais rápido</span><h1>Categorias</h1><p>Escolha uma necessidade para ver medicamentos relacionados.</p></header>
-    <section class="grade-categorias">
-        <% categorias.forEach(categoria => { const total = medicamentos.filter(m => m.categoria === categoria.nome).length; %>
-            <a href="/remedios?categoria=<%= encodeURIComponent(categoria.nome) %>" class="categoria-card"><ion-icon name="<%= categoria.icone %>"></ion-icon><div><h2><%= categoria.nome %></h2><p><%= categoria.descricao %></p><small><%= total %> medicamento(s) no protótipo</small></div><ion-icon name="arrow-forward-outline"></ion-icon></a>
-        <% }) %>
-    </section>
-</main><%- include('../partials/footer') %></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
+    <title>Categorias — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'categorias' }) %>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+    <!-- Conteúdo principal desta página. -->
+    <main class="secao pagina-lista">
+        <!-- Cabeçalho da página ou desta seção. -->
+        <header class="pagina-topo">
+            <span class="sobrelinha">Encontre mais rápido</span>
+            <h1>Categorias</h1>
+            <p>Escolha uma necessidade para ver medicamentos relacionados.</p>
+        </header>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="grade-categorias">
+            <!-- Repete este trecho para cada item enviado pela rota. -->
+            <% categorias.forEach(categoria => { const total = medicamentos.filter(m => m.categoria === categoria.nome).length; %>
+            <a
+                href="/remedios?categoria=<%= encodeURIComponent(categoria.nome) %>"
+                class="categoria-card"
+            >
+                <ion-icon name="<%= categoria.icone %>">
+                </ion-icon>
+                <div>
+                    <h2><%= categoria.nome %></h2>
+                    <p><%= categoria.descricao %></p>
+                    <small><%= total %> medicamento(s) no protótipo</small>
+                </div>
+                <ion-icon name="arrow-forward-outline">
+                </ion-icon>
+            </a>
+            <% }) %>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

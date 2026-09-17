@@ -1,1 +1,73 @@
-<!DOCTYPE html><html lang="pt-BR"><head><title>Administração — BioClicky</title><%- include('../partials/head', { cssPagina: 'admin' }) %><script src="/js/auth.js" defer></script></head><body class="admin-login-body"><main class="admin-login-card"><a href="/" class="admin-login-logo">BioClicky</a><span class="admin-selo"><ion-icon name="shield-checkmark-outline"></ion-icon> Área administrativa</span><h1>Acesso restrito</h1><p>Entre para gerenciar o conteúdo do comparador.</p><% if (erro) { %><p class="mensagem erro"><%= erro %></p><% } %><form action="/admin/login" method="POST"><label for="email">E-mail</label><input id="email" type="email" name="email" required><label for="senha">Senha</label><div class="campo-senha"><input id="senha" type="password" name="senha" required><button type="button" class="mostrar-senha" aria-label="Mostrar senha"><ion-icon name="eye-outline"></ion-icon></button></div><button class="botao-principal">Entrar</button></form><p class="credenciais"><strong>Demonstração</strong><br>admin@bioclicky.com<br>Senha: 123456</p><a href="/">← Voltar ao site</a></main></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
+    <title>Administração — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'admin' }) %>
+    <script
+        src="/js/auth.js"
+        defer
+    >
+    </script>
+</head>
+
+<body class="admin-login-body">
+    <!-- Conteúdo principal desta página. -->
+    <main class="admin-login-card">
+        <a
+            href="/"
+            class="admin-login-logo"
+        >BioClicky</a>
+        <span class="admin-selo">
+            <ion-icon name="shield-checkmark-outline">
+            </ion-icon> Área administrativa
+        </span>
+        <h1>Acesso restrito</h1>
+        <p>Entre para gerenciar o conteúdo do comparador.</p>
+        <!-- Mostra este trecho somente quando a condição for verdadeira. -->
+        <% if (erro) { %>
+            <p class="mensagem erro"><%= erro %></p>
+        <% } %>
+        <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+        <form
+            action="/admin/login"
+            method="POST"
+        >
+            <label for="email">E-mail</label>
+            <input
+                id="email"
+                type="email"
+                name="email"
+                required
+            >
+            <label for="senha">Senha</label>
+            <div class="campo-senha">
+                <input
+                    id="senha"
+                    type="password"
+                    name="senha"
+                    required
+                >
+                <button
+                    type="button"
+                    class="mostrar-senha"
+                    aria-label="Mostrar senha"
+                >
+                    <ion-icon name="eye-outline">
+                    </ion-icon>
+                </button>
+            </div>
+            <button class="botao-principal">Entrar</button>
+        </form>
+        <p class="credenciais">
+            <strong>Demonstração</strong>
+            <br>admin@bioclicky.com
+            <br>Senha: 123456
+        </p>
+        <a href="/">← Voltar ao site</a>
+    </main>
+</body>
+
+</html>

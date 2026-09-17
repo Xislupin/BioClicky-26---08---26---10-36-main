@@ -1,5 +1,10 @@
 <aside class="admin-nav">
-    <a href="/admin/dashboard" class="admin-logo">BioClicky <small>Admin</small></a>
+    <a
+        href="/admin/dashboard"
+        class="admin-logo"
+    >BioClicky <small>Admin</small>
+    </a>
+    <!-- Links de navegação. -->
     <nav aria-label="Menu administrativo">
         <a href="/admin/dashboard">Resumo</a>
         <a href="/admin/usuarios">Usuários</a>
@@ -9,5 +14,11 @@
         <a href="/admin/relatorios">Relatórios</a>
         <a href="/admin/configuracoes">Configurações</a>
     </nav>
-    <form action="/admin/logout" method="POST"><button class="admin-sair">Sair</button></form>
+    <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+    <form
+        action="/admin/logout"
+        method="POST"
+    >
+        <button class="admin-sair">Sair</button>
+    </form>
 </aside>

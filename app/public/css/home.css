@@ -1,12 +1,250 @@
-.hero { padding:58px 16px; background:linear-gradient(145deg,#f3fbf6 0%,#dff4e8 100%); }
-.hero-conteudo { width:min(800px,100%); margin:auto; text-align:center; }
-.destaque { display:inline-block; margin-bottom:18px; padding:7px 12px; color:var(--verde-escuro); background:#fff; border:1px solid #cce6d7; border-radius:999px; font-weight:700; font-size:.85rem; }
-.hero h1 { margin-bottom:18px; }.hero h1 em { color:var(--verde); font-style:normal; }.hero p { max-width:630px; margin:0 auto 26px; color:var(--cinza); font-size:1.08rem; }
-.busca-principal { display:grid; grid-template-columns:auto 1fr; gap:8px; align-items:center; max-width:720px; margin:auto; padding:8px 8px 8px 14px; background:#fff; border:1px solid #cfe2d7; border-radius:16px; box-shadow:var(--sombra); }
-.busca-principal ion-icon { font-size:1.4rem; color:var(--verde); }.busca-principal input { min-width:0; padding:10px 4px; border:0; outline:0; }.busca-principal button { grid-column:1/-1; min-height:48px; color:#fff; background:var(--verde); border:0; border-radius:11px; font-weight:800; cursor:pointer; }.hero small { display:block; margin-top:14px; color:var(--cinza); }
-.titulo-linha { display:flex; justify-content:space-between; align-items:end; gap:15px; }.titulo-linha h2 { margin:0; }.titulo-linha>a { color:var(--verde); font-weight:700; white-space:nowrap; }
-.grade-categorias { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:25px; }.categoria-resumo { display:flex; flex-direction:column; gap:12px; padding:18px 14px; background:#fff; border:1px solid var(--linha); border-radius:16px; }.categoria-resumo:hover { border-color:var(--verde); box-shadow:var(--sombra); transform:translateY(-2px); }.categoria-resumo>ion-icon { padding:10px; color:var(--verde); background:var(--verde-claro); border-radius:12px; font-size:1.6rem; }.categoria-resumo strong,.categoria-resumo small { display:block; }.categoria-resumo small { margin-top:3px; color:var(--cinza); }
-.como-funciona { text-align:center; background:var(--menta); width:100%; padding-inline:max(16px,calc((100vw - 1120px)/2)); }.passos { display:grid; gap:18px; margin-top:32px; }.passos article { padding:24px; background:#fff; border-radius:var(--raio); }.passos article>span { display:grid; place-items:center; width:42px; height:42px; margin:0 auto 14px; color:#fff; background:var(--verde); border-radius:50%; font-weight:800; }.passos h3 { margin-bottom:5px; }.passos p { margin:0; color:var(--cinza); }
-.seguranca { display:flex; gap:16px; align-items:flex-start; width:min(900px,calc(100% - 32px)); margin:64px auto; padding:22px; background:#fffaf0; border:1px solid #f3dfb8; border-radius:var(--raio); }.seguranca>ion-icon { flex:none; color:#9b6a00; font-size:2rem; }.seguranca h2 { margin-bottom:5px; font-size:1.2rem; }.seguranca p { margin:0; color:#655a45; }
-@media(min-width:650px){.busca-principal{grid-template-columns:auto 1fr auto}.busca-principal button{grid-column:auto;padding-inline:22px}.passos{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:800px){.hero{padding-block:92px}.grade-categorias{grid-template-columns:repeat(4,1fr)}.categoria-resumo{flex-direction:row;align-items:center;padding:20px}.categoria-resumo>ion-icon{flex:none}}
+/* Página inicial: busca primeiro, categorias depois. A base é o celular. */
+.hero {
+    /* Define o espaço interno nesta direção. */
+    padding: 40px 16px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #f1f7f3;
+    border-bottom: 1px solid var(--linha);
+}
+
+/* Alinha a busca com o restante do conteúdo. */
+.hero-conteudo {
+    /* Limita a largura máxima. */
+    max-width: 1120px;
+    /* Define o espaço externo nesta direção. */
+    margin: auto;
+}
+
+/* Título direto, sem ocupar toda a tela do celular. */
+.hero h1 {
+    /* Limita a largura máxima. */
+    max-width: 650px;
+    /* Define o espaço externo nesta direção. */
+    margin-bottom: 16px;
+    /* Define o tamanho do texto. */
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    /* Ajusta o espaço entre as letras. */
+    letter-spacing: -0.02em;
+}
+
+/* Estiliza .hero p. */
+
+.hero p {
+    /* Limita a largura máxima. */
+    max-width: 600px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* O botão fica abaixo do campo em telas pequenas. */
+.busca-principal {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define a quantidade e a largura das colunas. */
+    grid-template-columns: auto 1fr;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+    /* Define o espaço entre os itens. */
+    gap: 10px;
+    /* Limita a largura máxima. */
+    max-width: 720px;
+}
+
+/* Estiliza .busca-principal ion-icon. */
+
+.busca-principal ion-icon {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define o tamanho do texto. */
+    font-size: 1.5rem;
+}
+
+/* Estiliza .busca-principal input. */
+
+.busca-principal input {
+    /* Define a menor largura permitida. */
+    min-width: 0;
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 52px;
+    /* Define o espaço interno nesta direção. */
+    padding: 12px;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid #8da69a;
+    /* Arredonda os cantos. */
+    border-radius: 6px;
+}
+
+/* Estiliza .busca-principal button. */
+
+.busca-principal button {
+    /* Escolhe as colunas ocupadas pelo elemento. */
+    grid-column: 1 / -1;
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 50px;
+    /* Define o espaço interno nesta direção. */
+    padding: 12px 18px;
+    /* Define a cor do texto ou do ícone. */
+    color: white;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--verde);
+    /* Define a borda ao redor do elemento. */
+    border: 0;
+    /* Arredonda os cantos. */
+    border-radius: 6px;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+    /* Define o ponteiro mostrado ao passar sobre o elemento. */
+    cursor: pointer;
+}
+
+/* Estiliza .hero small. */
+
+.hero small {
+    /* Define como os elementos são organizados. */
+    display: block;
+    /* Define o espaço externo nesta direção. */
+    margin-top: 14px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Título da seção e link para todas as categorias. */
+.titulo-linha {
+    /* Define como os elementos são organizados. */
+    display: flex;
+    /* Permite quebrar os itens em novas linhas. */
+    flex-wrap: wrap;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+    /* Distribui os itens no eixo principal. */
+    justify-content: space-between;
+    /* Define o espaço entre os itens. */
+    gap: 12px;
+}
+
+/* Estiliza .titulo-linha h2. */
+
+.titulo-linha h2 {
+    /* Define o espaço externo nesta direção. */
+    margin: 0;
+    /* Define o tamanho do texto. */
+    font-size: 1.5rem;
+}
+
+/* Estiliza .titulo-linha a, .como-funciona a. */
+
+.titulo-linha a,
+.como-funciona a {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde-escuro);
+    /* Define sublinhado ou outra decoração do texto. */
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Duas colunas de atalhos no celular. */
+.grade-categorias {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define a quantidade e a largura das colunas. */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Define o espaço entre os itens. */
+    gap: 12px 24px;
+    /* Define o espaço externo nesta direção. */
+    margin-top: 18px;
+}
+
+/* Estiliza .categoria-resumo. */
+
+.categoria-resumo {
+    /* Define como os elementos são organizados. */
+    display: flex;
+    /* Define se os itens ficam em linha ou em coluna. */
+    flex-direction: column;
+    /* Alinha os itens no eixo transversal. */
+    align-items: flex-start;
+    /* Define o espaço entre os itens. */
+    gap: 10px;
+    /* Define o espaço interno nesta direção. */
+    padding: 18px 0;
+    border-bottom: 1px solid var(--linha);
+}
+
+/* Estiliza .categoria-resumo:hover strong. */
+
+.categoria-resumo:hover strong {
+    /* Define sublinhado ou outra decoração do texto. */
+    text-decoration: underline;
+}
+
+/* Estiliza .categoria-resumo > ion-icon. */
+
+.categoria-resumo>ion-icon {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define o tamanho do texto. */
+    font-size: 1.5rem;
+}
+
+/* Estiliza .categoria-resumo strong, .categoria-resumo small. */
+
+.categoria-resumo strong,
+.categoria-resumo small {
+    /* Define como os elementos são organizados. */
+    display: block;
+}
+
+/* Estiliza .categoria-resumo small. */
+
+.categoria-resumo small {
+    /* Define o espaço externo nesta direção. */
+    margin-top: 6px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Orientação curta no final da página, sem cartões decorativos. */
+.como-funciona {
+    /* Define o espaço interno nesta direção. */
+    padding-top: 0;
+}
+
+/* Estiliza .como-funciona h2. */
+
+.como-funciona h2 {
+    /* Define o tamanho do texto. */
+    font-size: 1.5rem;
+}
+
+/* Estiliza .como-funciona p. */
+
+.como-funciona p {
+    /* Limita a largura máxima. */
+    max-width: 700px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Em telas maiores, campo e botão dividem a mesma linha. */
+@media (min-width: 650px) {
+
+    /* Estiliza .busca-principal. */
+    .busca-principal {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: auto 1fr auto;
+    }
+
+    /* Estiliza .busca-principal button. */
+
+    .busca-principal button {
+        /* Escolhe as colunas ocupadas pelo elemento. */
+        grid-column: auto;
+    }
+
+    /* Estiliza .grade-categorias. */
+
+    .grade-categorias {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}

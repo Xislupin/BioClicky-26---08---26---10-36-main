@@ -1,1 +1,61 @@
-<!DOCTYPE html><html lang="pt-BR"><head><title>Painel administrativo — BioClicky</title><%- include('../partials/head', { cssPagina: 'admin' }) %></head><body class="admin-body"><%- include('../partials/admin-nav') %><main class="admin-main"><header class="admin-topo"><div><span class="sobrelinha">Visão geral</span><h1>Painel administrativo</h1><p>Olá, <%= admin %>. Acompanhe os dados principais do protótipo.</p></div></header><section class="admin-estatisticas"><article><ion-icon name="people-outline"></ion-icon><span>Usuários</span><strong><%= estatisticas.usuarios %></strong></article><article><ion-icon name="search-outline"></ion-icon><span>Pesquisas</span><strong><%= estatisticas.pesquisas %></strong></article><article><ion-icon name="medkit-outline"></ion-icon><span>Medicamentos</span><strong><%= estatisticas.medicamentos %></strong></article><article><ion-icon name="business-outline"></ion-icon><span>Farmácias</span><strong><%= estatisticas.farmacias %></strong></article></section><section class="admin-bloco"><h2>Ações rápidas</h2><div class="admin-acoes"><a href="/admin/medicamentos">Gerenciar medicamentos</a><a href="/admin/farmacias">Gerenciar farmácias</a><a href="/admin/relatorios">Ver relatórios</a></div></section></main></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
+    <title>Painel administrativo — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'admin' }) %>
+</head>
+
+<body class="admin-body">
+    <%- include('../partials/admin-nav') %>
+    <main class="admin-main">
+        <!-- Cabeçalho da página ou desta seção. -->
+        <header class="admin-topo">
+            <div>
+                <span class="sobrelinha">Visão geral</span>
+                <h1>Painel administrativo</h1>
+                <p>Olá, <%= admin %>. Acompanhe os dados principais do protótipo.</p>
+            </div>
+        </header>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="admin-estatisticas">
+            <article>
+                <ion-icon name="people-outline">
+                </ion-icon>
+                <span>Usuários</span>
+                <strong><%= estatisticas.usuarios %></strong>
+            </article>
+            <article>
+                <ion-icon name="search-outline">
+                </ion-icon>
+                <span>Pesquisas</span>
+                <strong><%= estatisticas.pesquisas %></strong>
+            </article>
+            <article>
+                <ion-icon name="medkit-outline">
+                </ion-icon>
+                <span>Medicamentos</span>
+                <strong><%= estatisticas.medicamentos %></strong>
+            </article>
+            <article>
+                <ion-icon name="business-outline">
+                </ion-icon>
+                <span>Farmácias</span>
+                <strong><%= estatisticas.farmacias %></strong>
+            </article>
+        </section>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="admin-bloco">
+            <h2>Ações rápidas</h2>
+            <div class="admin-acoes">
+                <a href="/admin/medicamentos">Gerenciar medicamentos</a>
+                <a href="/admin/farmacias">Gerenciar farmácias</a>
+                <a href="/admin/relatorios">Ver relatórios</a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

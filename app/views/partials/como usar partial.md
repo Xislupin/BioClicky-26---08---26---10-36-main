@@ -1,78 +1,37 @@
-2. Coloque o footer na partial
-Crie:
-app/views/partials/footer.ejs
+# Como usar os arquivos compartilhados
 
-E coloque todo o seu footer lá:
+Uma partial é um pedaço de HTML/EJS reutilizado em várias páginas.
+O conteúdo não está todo dentro da página inicial: cada página inclui os trechos comuns.
 
- <footer class="footer">
-    <section class="footer-container">
-        <section>
-            <img src="/imagens/logo-header/logo-branca.png"
-                 alt="BioClicky"
-                 class="footer-logo">
-            <p>
-                Plataforma para comparação de preços de medicamentos
-                em farmácias próximas de você.
-            </p>
-        </section>
-        <section>
-            <h3>Navegação</h3>
-            <a href="/">Início</a>
-            <a href="/remedios">Remédios</a>
-            <a href="/farmacias">Farmácias</a>
-            <a href="/categorias">Categorias</a>
-        </section>
-        <section>
-            <h3>Institucional</h3>
-            <a href="/sobre">Sobre nós</a>
-            <a href="#">Termos de uso</a>
-            <a href="#">Privacidade</a>
-        </section>
-        <section>
-            <h3>Contato</h3>
-            <p>contato@bioclicky.com.br</p>
-            <p>(11) 99999-9999</p>
-        </section>
-    </section
-    <section class="footer-bottom">
-        © 2026 BioClicky. Todos os direitos reservados.
-    </section>
-</footer>
+| Arquivo | O que contém |
+| --- | --- |
+| `head.ejs` | Codificação, configuração da tela, CSS e scripts comuns. |
+| `header.ejs` | Logo, menu, botão de entrar e acesso ao perfil. |
+| `footer.ejs` | Rodapé das páginas públicas. |
+| `admin-nav.ejs` | Menu exclusivo do administrador. |
+| `auth-top.ejs` | Logo das telas de acesso. |
 
+Dentro de uma página na pasta `pages`, usamos:
 
-3. Na página, você chama a partial
-
-Por exemplo, no sobre.ejs, no final da página:
-
-<%- include('partials/footer') %>
-
-Então o sobre.ejs fica mais ou menos:
+```ejs
+<!-- Reutiliza o cabeçalho comum. -->
+<%- include('../partials/header') %>
 
 <main>
-    <section class="sobre-hero">
-        <h1>Sobre a BioClicky</h1>
-        <p>
-            Encontre medicamentos e compare preços
-            de forma rápida e fácil.
-        </p>
-    </section>
-    <!-- restante da página -->
+    <!-- Aqui entra somente o conteúdo específico desta página. -->
+    <h1>Sobre o BioClicky</h1>
 </main>
 
+<!-- Reutiliza o rodapé comum. -->
+<%- include('../partials/footer') %>
+```
 
-<%- include('partials/footer') %>
-4. Faça o mesmo nas outras páginas
+`..` sobe uma pasta: sai de `pages` e encontra a pasta `partials`.
+`include` insere o conteúdo do arquivo durante a montagem da página no servidor.
+`<%-` permite inserir o HTML do arquivo compartilhado. Para dados do usuário,
+use `<%=`: esse formato escapa caracteres que poderiam ser interpretados como HTML.
 
-index.ejs:
+Para mudar os links do menu em todas as páginas, edite `header.ejs` uma única vez.
+Para mudar apenas a página de remédios, edite `pages/remedios.ejs` e `public/css/remedios.css`.
 
-<%- include('partials/footer') %>
-
-remedios.ejs:
-
-<%- include('partials/footer') %>
-
-farmacias.ejs:
-
-<%- include('partials/footer') %>
-
-Assim, você não precisa copiar o footer inteiro para todas as páginas.
+Os comentários explicam os trechos; não aparecem como texto na tela do site.

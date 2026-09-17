@@ -1,1 +1,31 @@
-<!DOCTYPE html><html lang="pt-BR"><head><title><%= titulo %> — Administração</title><%- include('../partials/head', { cssPagina: 'admin' }) %></head><body class="admin-body"><%- include('../partials/admin-nav') %><main class="admin-main"><header class="admin-topo"><div><span class="sobrelinha">Administração</span><h1><%= titulo %></h1><p><%= texto %></p></div></header><section class="admin-bloco"><h2>Módulo preparado</h2><p>Esta área já faz parte da navegação. A integração com o banco de dados será a próxima etapa do projeto.</p></section></main></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
+    <title><%= titulo %> — Administração</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'admin' }) %>
+</head>
+
+<body class="admin-body">
+    <%- include('../partials/admin-nav') %>
+    <main class="admin-main">
+        <!-- Cabeçalho da página ou desta seção. -->
+        <header class="admin-topo">
+            <div>
+                <span class="sobrelinha">Administração</span>
+                <h1><%= titulo %></h1>
+                <p><%= texto %></p>
+            </div>
+        </header>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="admin-bloco">
+            <h2>Módulo preparado</h2>
+            <p>Esta área já faz parte da navegação. A integração com o banco de dados será a próxima
+                etapa do projeto.</p>
+        </section>
+    </main>
+</body>
+
+</html>

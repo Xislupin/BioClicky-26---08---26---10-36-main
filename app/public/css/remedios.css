@@ -1,2 +1,251 @@
-.filtros { display:grid; gap:12px; padding:18px; background:var(--menta); border-radius:var(--raio); }.filtros label span { display:block; margin-bottom:5px; font-weight:700; }.filtros input,.filtros select { width:100%; min-height:48px; padding:10px 12px; background:#fff; border:1px solid var(--linha); border-radius:10px; }.filtros button { min-height:48px; align-self:end; color:#fff; background:var(--verde); border:0; border-radius:10px; font-weight:700; }.resultado { color:var(--cinza); margin:25px 0 12px; }.lista-remedios { display:grid; gap:14px; }.remedio-card { display:grid; grid-template-columns:76px 1fr; gap:15px; padding:16px; border:1px solid var(--linha); border-radius:var(--raio); }.remedio-card>img { width:76px; height:76px; object-fit:contain; background:#fafafa; border-radius:12px; }.remedio-info h2 { margin:6px 0 4px; font-size:1.15rem; }.remedio-info p { margin:0 0 8px; color:var(--cinza); font-size:.92rem; }.remedio-info small { color:var(--cinza); }.etiqueta { padding:4px 8px; color:var(--verde-escuro); background:var(--verde-claro); border-radius:999px; font-size:.74rem; font-weight:700; }.preco { grid-column:1/-1; display:grid; grid-template-columns:1fr auto; align-items:center; padding-top:12px; border-top:1px solid var(--linha); }.preco small,.preco strong,.preco span { display:block; }.preco strong { color:var(--verde-escuro); font-size:1.45rem; }.preco span { color:var(--cinza); font-size:.8rem; }.preco a { grid-column:2; grid-row:1/4; padding:10px 12px; color:var(--verde); border:1px solid var(--verde); border-radius:9px; font-weight:700; }
-@media(min-width:720px){.filtros{grid-template-columns:2fr 1fr auto}.remedio-card{grid-template-columns:100px 1fr auto;align-items:center;padding:20px}.remedio-card>img{width:100px;height:100px}.preco{grid-column:auto;display:block;padding:0 0 0 24px;border:0;border-left:1px solid var(--linha);text-align:right}.preco a{display:inline-block;margin-top:9px}}
+/* Estiliza .filtros. */
+.filtros {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define o espaço entre os itens. */
+    gap: 12px;
+    /* Define o espaço interno nesta direção. */
+    padding: 18px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--menta);
+    /* Arredonda os cantos. */
+    border-radius: var(--raio);
+}
+
+/* Estiliza .filtros label span. */
+.filtros label span {
+    /* Define como os elementos são organizados. */
+    display: block;
+    /* Define o espaço externo nesta direção. */
+    margin-bottom: 5px;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .filtros input,.filtros select. */
+.filtros input,
+.filtros select {
+    /* Define a largura. */
+    width: 100%;
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 48px;
+    /* Define o espaço interno nesta direção. */
+    padding: 10px 12px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fff;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: 10px;
+}
+
+/* Estiliza .filtros button. */
+.filtros button {
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 48px;
+    align-self: end;
+    /* Define a cor do texto ou do ícone. */
+    color: #fff;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--verde);
+    /* Define a borda ao redor do elemento. */
+    border: 0;
+    /* Arredonda os cantos. */
+    border-radius: 10px;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .resultado. */
+.resultado {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+    /* Define o espaço externo nesta direção. */
+    margin: 25px 0 12px;
+}
+
+/* Estiliza .lista-remedios. */
+.lista-remedios {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define o espaço entre os itens. */
+    gap: 14px;
+}
+
+/* Estiliza .remedio-card. */
+.remedio-card {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define a quantidade e a largura das colunas. */
+    grid-template-columns: 76px 1fr;
+    /* Define o espaço entre os itens. */
+    gap: 15px;
+    /* Define o espaço interno nesta direção. */
+    padding: 16px;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: var(--raio);
+}
+
+/* Estiliza .remedio-card>img. */
+.remedio-card>img {
+    /* Define a largura. */
+    width: 76px;
+    /* Define a altura. */
+    height: 76px;
+    /* Ajusta a imagem dentro da área sem deformá-la. */
+    object-fit: contain;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fafafa;
+    /* Arredonda os cantos. */
+    border-radius: 12px;
+}
+
+/* Estiliza .remedio-info h2. */
+.remedio-info h2 {
+    /* Define o espaço externo nesta direção. */
+    margin: 6px 0 4px;
+    /* Define o tamanho do texto. */
+    font-size: 1.15rem;
+}
+
+/* Estiliza .remedio-info p. */
+.remedio-info p {
+    /* Define o espaço externo nesta direção. */
+    margin: 0 0 8px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+    /* Define o tamanho do texto. */
+    font-size: .92rem;
+}
+
+/* Estiliza .remedio-info small. */
+.remedio-info small {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Estiliza .etiqueta. */
+.etiqueta {
+    /* Define o espaço interno nesta direção. */
+    padding: 4px 8px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde-escuro);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--verde-claro);
+    /* Arredonda os cantos. */
+    border-radius: 999px;
+    /* Define o tamanho do texto. */
+    font-size: .74rem;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .preco. */
+.preco {
+    /* Escolhe as colunas ocupadas pelo elemento. */
+    grid-column: 1/-1;
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define a quantidade e a largura das colunas. */
+    grid-template-columns: 1fr auto;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+    /* Define o espaço interno nesta direção. */
+    padding-top: 12px;
+    border-top: 1px solid var(--linha);
+}
+
+/* Estiliza .preco small,.preco strong,.preco span. */
+.preco small,
+.preco strong,
+.preco span {
+    /* Define como os elementos são organizados. */
+    display: block;
+}
+
+/* Estiliza .preco strong. */
+.preco strong {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde-escuro);
+    /* Define o tamanho do texto. */
+    font-size: 1.45rem;
+}
+
+/* Estiliza .preco span. */
+.preco span {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+    /* Define o tamanho do texto. */
+    font-size: .8rem;
+}
+
+/* Estiliza .preco a. */
+.preco a {
+    /* Escolhe as colunas ocupadas pelo elemento. */
+    grid-column: 2;
+    /* Escolhe as linhas ocupadas pelo elemento. */
+    grid-row: 1/4;
+    /* Define o espaço interno nesta direção. */
+    padding: 10px 12px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--verde);
+    /* Arredonda os cantos. */
+    border-radius: 9px;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Adapta o layout quando a tela atende a (min-width:720px). */
+@media(min-width:720px) {
+
+    /* Estiliza .filtros. */
+    .filtros {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: 2fr 1fr auto
+    }
+
+    /* Estiliza .remedio-card. */
+    .remedio-card {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: 100px 1fr auto;
+        /* Alinha os itens no eixo transversal. */
+        align-items: center;
+        /* Define o espaço interno nesta direção. */
+        padding: 20px
+    }
+
+    /* Estiliza .remedio-card>img. */
+    .remedio-card>img {
+        /* Define a largura. */
+        width: 100px;
+        /* Define a altura. */
+        height: 100px
+    }
+
+    /* Estiliza .preco. */
+    .preco {
+        /* Escolhe as colunas ocupadas pelo elemento. */
+        grid-column: auto;
+        /* Define como os elementos são organizados. */
+        display: block;
+        /* Define o espaço interno nesta direção. */
+        padding: 0 0 0 24px;
+        /* Define a borda ao redor do elemento. */
+        border: 0;
+        border-left: 1px solid var(--linha);
+        /* Alinha o texto dentro do elemento. */
+        text-align: right
+    }
+
+    /* Estiliza .preco a. */
+    .preco a {
+        /* Define como os elementos são organizados. */
+        display: inline-block;
+        /* Define o espaço externo nesta direção. */
+        margin-top: 9px
+    }
+}

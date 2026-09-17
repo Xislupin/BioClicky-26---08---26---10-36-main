@@ -1,46 +1,90 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
     <title>BioClicky — Compare preços de remédios</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
     <%- include('../partials/head', { cssPagina: 'home' }) %>
-</head><body>
-<%- include('../partials/header') %>
-<main>
-    <section class="hero">
-        <div class="hero-conteudo">
-            <span class="destaque">Economize no seu tratamento</span>
-            <h1>Encontre seu remédio pelo <em>menor preço</em></h1>
-            <p>Pesquise o medicamento e compare ofertas de farmácias próximas de forma simples.</p>
-            <form action="/remedios" method="GET" class="busca-principal" role="search">
-                <label for="busca-home" class="sr-only">Nome do medicamento</label>
-                <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-                <input id="busca-home" name="q" type="search" placeholder="Ex.: Dipirona 500mg" required>
-                <button type="submit">Comparar preços</button>
-            </form>
-            <small><ion-icon name="location-outline"></ion-icon> Resultados de São Paulo e região</small>
-        </div>
-    </section>
+</head>
 
-    <section class="secao categorias-home">
-        <div class="titulo-linha"><div><span class="sobrelinha">Busca rápida</span><h2>Pesquise por categoria</h2></div><a href="/categorias">Ver todas</a></div>
-        <div class="grade-categorias">
-            <% categorias.forEach((categoria) => { %>
-                <a href="/remedios?categoria=<%= encodeURIComponent(categoria.nome) %>" class="categoria-resumo">
-                    <ion-icon name="<%= categoria.icone %>" aria-hidden="true"></ion-icon>
-                    <span><strong><%= categoria.nome %></strong><small><%= categoria.descricao %></small></span>
-                </a>
-            <% }) %>
-        </div>
-    </section>
+<body>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/header') %>
+    <!-- Conteúdo principal desta página. -->
+    <main>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="hero">
+            <div class="hero-conteudo">
+                <h1>Qual remédio você procura?</h1>
+                <p>Digite o nome que está na receita para consultar os preços.</p>
+                <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+                <form
+                    action="/remedios"
+                    method="GET"
+                    class="busca-principal"
+                    role="search"
+                >
+                    <!-- Identifica o campo pelo mesmo valor de for e id. -->
+                    <label
+                        for="busca-home"
+                        class="sr-only"
+                    >Nome do medicamento</label>
+                    <ion-icon
+                        name="search-outline"
+                        aria-hidden="true"
+                    >
+                    </ion-icon>
+                    <!-- Campo do formulário; name identifica o valor recebido no servidor. -->
+                    <input
+                        id="busca-home"
+                        name="q"
+                        type="search"
+                        placeholder="Ex.: Dipirona 500mg"
+                        required
+                    >
+                    <!-- Botão: envia o formulário ou executa a ação definida no JavaScript. -->
+                    <button type="submit">Comparar preços</button>
+                </form>
+                <small>Consulta gratuita, sem precisar criar uma conta.</small>
+            </div>
+        </section>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="secao categorias-home">
+            <div class="titulo-linha">
+                <h2>Categorias</h2>
+                <a href="/categorias">Ver todas</a>
+            </div>
+            <div class="grade-categorias">
+                <!-- Repete este trecho para cada item enviado pela rota. -->
+                <% categorias.forEach((categoria) => { %>
+                    <a
+                        href="/remedios?categoria=<%= encodeURIComponent(categoria.nome) %>"
+                        class="categoria-resumo"
+                    >
+                        <ion-icon
+                            name="<%= categoria.icone %>"
+                            aria-hidden="true"
+                        >
+                        </ion-icon>
+                        <span>
+                            <strong><%= categoria.nome %></strong>
+                            <small><%= categoria.descricao %></small>
+                        </span>
+                    </a>
+                <% }) %>
+            </div>
+        </section>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="secao como-funciona">
+            <h2>Antes de ir à farmácia</h2>
+            <p>Confira o nome e a dosagem do medicamento. Depois da busca, consulte os dados da
+                farmácia e confirme o preço e a disponibilidade.</p>
+            <a href="/farmacias">Consultar farmácias →</a>
+        </section>
+    </main>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/footer') %>
+</body>
 
-    <section class="secao como-funciona">
-        <span class="sobrelinha">Sem complicação</span><h2>Como o BioClicky funciona</h2>
-        <div class="passos">
-            <article><span>1</span><h3>Pesquise</h3><p>Digite o nome do medicamento.</p></article>
-            <article><span>2</span><h3>Compare</h3><p>Veja preços em diferentes farmácias.</p></article>
-            <article><span>3</span><h3>Economize</h3><p>Escolha a oferta mais adequada.</p></article>
-        </div>
-    </section>
-
-    <section class="seguranca"><ion-icon name="shield-checkmark-outline"></ion-icon><div><h2>Informação clara e responsável</h2><p>O BioClicky ajuda na comparação de preços, mas não substitui orientação médica ou farmacêutica.</p></div></section>
-</main>
-<%- include('../partials/footer') %>
-</body></html>
+</html>

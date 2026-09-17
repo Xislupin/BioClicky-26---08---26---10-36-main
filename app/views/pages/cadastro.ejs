@@ -1,2 +1,98 @@
-<!DOCTYPE html><html lang="pt-BR"><head><title>Criar conta — BioClicky</title><%- include('../partials/head', { cssPagina: 'auth' }) %><script src="/js/auth.js" defer></script></head><body class="auth-body">
-<main class="auth-layout"><section class="auth-apresentacao"><%- include('../partials/auth-top') %><div><span class="sobrelinha">Conta gratuita</span><h1>Uma experiência feita para ser simples</h1><p>Cadastre-se para guardar seus dados básicos.</p></div><a href="/">← Voltar ao início</a></section><section class="auth-formulario"><form action="/cadastro" method="POST" class="auth-card"><h2>Criar conta</h2><p>Todos os campos são obrigatórios.</p><% if (erro) { %><p class="mensagem erro" role="alert"><%= erro %></p><% } %><label for="nome">Nome completo</label><input id="nome" name="nome" autocomplete="name" required><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required><label for="senha">Senha</label><div class="campo-senha"><input id="senha" name="senha" type="password" minlength="6" autocomplete="new-password" required><button type="button" class="mostrar-senha" aria-label="Mostrar senha"><ion-icon name="eye-outline"></ion-icon></button></div><label for="confirmarSenha">Confirmar senha</label><input id="confirmarSenha" name="confirmarSenha" type="password" minlength="6" autocomplete="new-password" required><button class="botao-principal">Criar conta</button><p class="auth-link">Já tem conta? <a href="/login">Entrar</a></p></form></section></main></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
+    <title>Criar conta — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'auth' }) %>
+    <script
+        src="/js/auth.js"
+        defer
+    >
+    </script>
+</head>
+
+<body class="auth-body">
+    <!-- Conteúdo principal desta página. -->
+    <main class="auth-layout">
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="auth-apresentacao">
+            <%- include('../partials/auth-top') %>
+            <div>
+                <span class="sobrelinha">Conta gratuita</span>
+                <h1>Uma experiência feita para ser simples</h1>
+                <p>Cadastre-se para guardar seus dados básicos.</p>
+            </div>
+            <a href="/">← Voltar ao início</a>
+        </section>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="auth-formulario">
+            <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+            <form
+                action="/cadastro"
+                method="POST"
+                class="auth-card"
+            >
+                <h2>Criar conta</h2>
+                <p>Todos os campos são obrigatórios.</p>
+                <!-- Mostra este trecho somente quando a condição for verdadeira. -->
+                <% if (erro) { %>
+                    <p
+                        class="mensagem erro"
+                        role="alert"
+                    ><%= erro %></p>
+                <% } %>
+                <!-- Identifica o campo pelo mesmo valor de for e id. -->
+                <label for="nome">Nome completo</label>
+                <input
+                    id="nome"
+                    name="nome"
+                    autocomplete="name"
+                    required
+                >
+                <label for="email">E-mail</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                >
+                <label for="senha">Senha</label>
+                <div class="campo-senha">
+                    <input
+                        id="senha"
+                        name="senha"
+                        type="password"
+                        minlength="6"
+                        autocomplete="new-password"
+                        required
+                    >
+                    <button
+                        type="button"
+                        class="mostrar-senha"
+                        aria-label="Mostrar senha"
+                    >
+                        <ion-icon name="eye-outline">
+                        </ion-icon>
+                    </button>
+                </div>
+                <label for="confirmarSenha">Confirmar senha</label>
+                <input
+                    id="confirmarSenha"
+                    name="confirmarSenha"
+                    type="password"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                >
+                <button class="botao-principal">Criar conta</button>
+                <p class="auth-link">Já tem conta? <a href="/login">Entrar</a>
+                </p>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
