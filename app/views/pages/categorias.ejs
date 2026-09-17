@@ -18,8 +18,8 @@
             <h1>Categorias</h1>
             <p>Escolha uma necessidade para ver medicamentos relacionados.</p>
         </header>
-        <!-- Agrupa uma seção do conteúdo. -->
-        <section class="grade-categorias">
+        <!-- Agrupa o layout; os títulos e conteúdos internos mantêm sua própria semântica. -->
+        <div class="grade-categorias">
             <!-- Repete este trecho para cada item enviado pela rota. -->
             <% categorias.forEach(categoria => { const total = medicamentos.filter(m => m.categoria === categoria.nome).length; %>
             <a
@@ -37,7 +37,7 @@
                 </ion-icon>
             </a>
             <% }) %>
-        </section>
+        </div>
     </main>
     <%- include('../partials/footer') %>
 </body>

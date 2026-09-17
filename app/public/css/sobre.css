@@ -73,8 +73,8 @@
     padding-top: 0;
 }
 
-/* Estiliza .valores article. */
-.valores article {
+/* Estiliza .valores .valor. */
+.valores .valor {
     /* Define o espaço interno nesta direção. */
     padding: 23px;
     /* Define a cor ou o preenchimento de fundo. */

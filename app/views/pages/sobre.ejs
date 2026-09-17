@@ -29,26 +29,27 @@
             </ion-icon>
         </section>
         <!-- Agrupa uma seção do conteúdo. -->
-        <section class="secao valores">
-            <article>
+        <!-- Agrupamento visual dos valores; cada título identifica seu próprio assunto. -->
+        <div class="secao valores">
+            <div class="valor">
                 <ion-icon name="eye-outline">
                 </ion-icon>
                 <h2>Clareza</h2>
                 <p>Informações fáceis de encontrar e entender.</p>
-            </article>
-            <article>
+            </div>
+            <div class="valor">
                 <ion-icon name="accessibility-outline">
                 </ion-icon>
                 <h2>Acessibilidade</h2>
                 <p>Botões grandes, bom contraste e uso simples.</p>
-            </article>
-            <article>
+            </div>
+            <div class="valor">
                 <ion-icon name="shield-checkmark-outline">
                 </ion-icon>
                 <h2>Responsabilidade</h2>
                 <p>Comparar preços sem incentivar automedicação.</p>
-            </article>
-        </section>
+            </div>
+        </div>
     </main>
     <%- include('../partials/footer') %>
 </body>

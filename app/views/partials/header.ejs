@@ -24,7 +24,7 @@
         >
         </ion-icon>
     </button>
-    <!-- Links de navegação. -->
+    <!-- Links de navegação. aria-current="page" identifica a página atual. -->
     <nav
         class="navegacao"
         aria-label="Navegação principal"
@@ -37,30 +37,35 @@
                 <a
                     href="/"
                     class="<%= rotaAtual === '/' ? 'ativo' : '' %>"
+                    aria-current="<%= rotaAtual === '/' ? 'page' : 'false' %>"
                 >Início</a>
             </li>
             <li>
                 <a
                     href="/remedios"
                     class="<%= rotaAtual === '/remedios' ? 'ativo' : '' %>"
+                    aria-current="<%= rotaAtual === '/remedios' ? 'page' : 'false' %>"
                 >Remédios</a>
             </li>
             <li>
                 <a
                     href="/farmacias"
                     class="<%= rotaAtual === '/farmacias' ? 'ativo' : '' %>"
+                    aria-current="<%= rotaAtual === '/farmacias' ? 'page' : 'false' %>"
                 >Farmácias</a>
             </li>
             <li>
                 <a
                     href="/categorias"
                     class="<%= rotaAtual === '/categorias' ? 'ativo' : '' %>"
+                    aria-current="<%= rotaAtual === '/categorias' ? 'page' : 'false' %>"
                 >Categorias</a>
             </li>
             <li>
                 <a
                     href="/sobre"
                     class="<%= rotaAtual === '/sobre' ? 'ativo' : '' %>"
+                    aria-current="<%= rotaAtual === '/sobre' ? 'page' : 'false' %>"
                 >Sobre</a>
             </li>
         </ul>
@@ -70,6 +75,7 @@
         <a
             href="/perfil"
             class="conta"
+            aria-current="<%= rotaAtual === '/perfil' ? 'page' : 'false' %>"
         >
             <ion-icon
                 name="person-outline"

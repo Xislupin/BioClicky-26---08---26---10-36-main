@@ -17,8 +17,8 @@
             <h1>Olá, <%= nome %></h1>
             <p>Atualize os dados usados para personalizar sua experiência.</p>
         </header>
-        <!-- Agrupa uma seção do conteúdo. -->
-        <section class="perfil-card">
+        <!-- Agrupa o layout; os títulos e conteúdos internos mantêm sua própria semântica. -->
+        <div class="perfil-card">
             <!-- Mostra este trecho somente quando a condição for verdadeira. -->
             <% if (salvo) { %>
                 <p class="mensagem sucesso">Alterações salvas com sucesso.</p>
@@ -57,7 +57,7 @@
             >
                 <button class="botao-secundario">Sair da conta</button>
             </form>
-        </section>
+        </div>
     </main>
     <%- include('../partials/footer') %>
 </body>

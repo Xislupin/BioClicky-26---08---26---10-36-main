@@ -19,33 +19,37 @@
                 <p>Olá, <%= admin %>. Acompanhe os dados principais do protótipo.</p>
             </div>
         </header>
-        <!-- Agrupa uma seção do conteúdo. -->
-        <section class="admin-estatisticas">
-            <article>
-                <ion-icon name="people-outline">
-                </ion-icon>
-                <span>Usuários</span>
-                <strong><%= estatisticas.usuarios %></strong>
-            </article>
-            <article>
-                <ion-icon name="search-outline">
-                </ion-icon>
-                <span>Pesquisas</span>
-                <strong><%= estatisticas.pesquisas %></strong>
-            </article>
-            <article>
-                <ion-icon name="medkit-outline">
-                </ion-icon>
-                <span>Medicamentos</span>
-                <strong><%= estatisticas.medicamentos %></strong>
-            </article>
-            <article>
-                <ion-icon name="business-outline">
-                </ion-icon>
-                <span>Farmácias</span>
-                <strong><%= estatisticas.farmacias %></strong>
-            </article>
-        </section>
+        <!-- Lista de descrições: dt nomeia o indicador e dd informa seu valor. -->
+        <dl class="admin-estatisticas" aria-label="Resumo dos indicadores">
+            <div>
+                <dt>
+                    <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+                    Usuários
+                </dt>
+                <dd><%= estatisticas.usuarios %></dd>
+            </div>
+            <div>
+                <dt>
+                    <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                    Pesquisas
+                </dt>
+                <dd><%= estatisticas.pesquisas %></dd>
+            </div>
+            <div>
+                <dt>
+                    <ion-icon name="medkit-outline" aria-hidden="true"></ion-icon>
+                    Medicamentos
+                </dt>
+                <dd><%= estatisticas.medicamentos %></dd>
+            </div>
+            <div>
+                <dt>
+                    <ion-icon name="business-outline" aria-hidden="true"></ion-icon>
+                    Farmácias
+                </dt>
+                <dd><%= estatisticas.farmacias %></dd>
+            </div>
+        </dl>
         <!-- Agrupa uma seção do conteúdo. -->
         <section class="admin-bloco">
             <h2>Ações rápidas</h2>
