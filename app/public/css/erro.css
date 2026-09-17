@@ -1,0 +1,1 @@
+.erro-pagina { min-height:65vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:40px 20px; text-align:center; }.erro-pagina>strong { color:var(--verde); font-size:5rem; line-height:1; }.erro-pagina h1 { margin:15px 0 8px; }.erro-pagina p { color:var(--cinza); }.erro-pagina a { margin-top:15px; }

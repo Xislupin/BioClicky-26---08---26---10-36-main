@@ -1,192 +1,46 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/home.css">
-    <title>Bio Clicky</title>
-</head>
-<body>
-
-<!-- ===================================== HEADER | CABEÇALHO ===================================== -->
-
-<header class="cabecalho">
-
-    <a href="/" class="logo">
-        <img src="/imagens/logo-header/logo-e-titulo.png" alt="BioClicky">
-    </a>
-
-    <nav class="menu-container">
-
-        <span class="indicador"></span>
-
-        <ul class="menu">
-            <li><a href="/" class="ativo">Início</a></li>
-            <li><a href="/remedios">Remédios</a></li>
-            <li><a href="/farmacias">Farmácias</a></li>
-            <li><a href="/categorias">Categorias</a></li>
-            <li><a href="/sobre">Sobre</a></li>
-        </ul>
-
-    </nav>
-
-    <button
-        type="button"
-        class="entrar"
-        onclick="window.location.href='/login'"
-    >
-        <ion-icon name="person-outline"></ion-icon>
-        Entrar
-    </button>
-
-</header>
-
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <title>BioClicky — Compare preços de remédios</title>
+    <%- include('../partials/head', { cssPagina: 'home' }) %>
+</head><body>
+<%- include('../partials/header') %>
 <main>
-
     <section class="hero">
-
-        <h1>
-            Encontre remédios com
-            <span>os melhores preços</span>
-        </h1>
-
-        <p>
-            Compare preços de medicamentos em farmácias próximas de você e
-            economize no seu tratamento.
-        </p>
-
-        <form action="/categorias" method="GET">
-
-            <input
-                type="text"
-                name="q"
-                placeholder="Buscar remédio, princípio ativo..."
-            >
-
-            <button type="submit">
-                Buscar
-            </button>
-
-        </form>
-
-        <address>
-
-            <ion-icon name="location-outline"></ion-icon>
-
-            São Paulo - SP
-
-            <a href="#">
-                Alterar
-            </a>
-
-        </address>
-
+        <div class="hero-conteudo">
+            <span class="destaque">Economize no seu tratamento</span>
+            <h1>Encontre seu remédio pelo <em>menor preço</em></h1>
+            <p>Pesquise o medicamento e compare ofertas de farmácias próximas de forma simples.</p>
+            <form action="/remedios" method="GET" class="busca-principal" role="search">
+                <label for="busca-home" class="sr-only">Nome do medicamento</label>
+                <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                <input id="busca-home" name="q" type="search" placeholder="Ex.: Dipirona 500mg" required>
+                <button type="submit">Comparar preços</button>
+            </form>
+            <small><ion-icon name="location-outline"></ion-icon> Resultados de São Paulo e região</small>
+        </div>
     </section>
 
-<section class="categorias">
+    <section class="secao categorias-home">
+        <div class="titulo-linha"><div><span class="sobrelinha">Busca rápida</span><h2>Pesquise por categoria</h2></div><a href="/categorias">Ver todas</a></div>
+        <div class="grade-categorias">
+            <% categorias.forEach((categoria) => { %>
+                <a href="/remedios?categoria=<%= encodeURIComponent(categoria.nome) %>" class="categoria-resumo">
+                    <ion-icon name="<%= categoria.icone %>" aria-hidden="true"></ion-icon>
+                    <span><strong><%= categoria.nome %></strong><small><%= categoria.descricao %></small></span>
+                </a>
+            <% }) %>
+        </div>
+    </section>
 
-    <header class="categorias-topo">
+    <section class="secao como-funciona">
+        <span class="sobrelinha">Sem complicação</span><h2>Como o BioClicky funciona</h2>
+        <div class="passos">
+            <article><span>1</span><h3>Pesquise</h3><p>Digite o nome do medicamento.</p></article>
+            <article><span>2</span><h3>Compare</h3><p>Veja preços em diferentes farmácias.</p></article>
+            <article><span>3</span><h3>Economize</h3><p>Escolha a oferta mais adequada.</p></article>
+        </div>
+    </section>
 
-        <h2>Categorias</h2>
-
-        <a href="/categorias" class="ver-todas">
-            Ver todas
-            <ion-icon name="arrow-forward-outline"></ion-icon>
-        </a>
-
-    </header>
-
-    <ul class="lista-categorias">
-
-        <li>
-            <article>
-                <ion-icon name="pricetag-outline"></ion-icon>
-                <p>Dor de Cabeça</p>
-            </article>
-        </li>
-
-        <li>
-            <article>
-                <ion-icon name="pricetag-outline"></ion-icon>
-                <p>Febre</p>
-            </article>
-        </li>
-
-        <li>
-            <article>
-                <ion-icon name="pricetag-outline"></ion-icon>
-                <p>Inflamação</p>
-            </article>
-        </li>
-
-        <li>
-            <article>
-                <ion-icon name="pricetag-outline"></ion-icon>
-                <p>Alergia</p>
-            </article>
-        </li>
-
-        <li>
-            <article>
-                <ion-icon name="pricetag-outline"></ion-icon>
-                <p>Diabetes</p>
-            </article>
-        </li>
-
-        <li>
-            <article>
-                <ion-icon name="pricetag-outline"></ion-icon>
-                <p>Pressão Alta</p>
-            </article>
-        </li>
-
-    </ul>
-
-</section>
-
+    <section class="seguranca"><ion-icon name="shield-checkmark-outline"></ion-icon><div><h2>Informação clara e responsável</h2><p>O BioClicky ajuda na comparação de preços, mas não substitui orientação médica ou farmacêutica.</p></div></section>
 </main>
-
-<footer class="footer">
-    <section class="footer-container">
-        <section>
-            <img src="/imagens/logo-header/logo-branca.png" alt="BioClicky" class="footer-logo">
-            <p>
-                Plataforma para comparação de preços de medicamentos
-                em farmácias próximas de você.
-            </p>
-        </section>
-
-        <section>
-
-            <h3>Navegação</h3>
-            <a href="/">Início</a>
-            <a href="/remedios">Remédios</a>
-            <a href="/farmacias">Farmácias</a>
-            <a href="/categorias">Categorias</a>
-        </section>
-
-        <section>
-            <h3>Institucional</h3>
-            <a href="/sobre">Sobre nós</a>
-            <a href="#">Termos de uso</a>
-            <a href="#">Privacidade</a>
-        </section>
-
-        <section>
-            <h3>Contato</h3>
-            <p>contato@bioclicky.com.br</p>
-            <p>(11) 99999-9999</p>
-        </section>
-    </section>
-    <section class="footer-bottom">
-        © 2026 BioClicky. Todos os direitos reservados.
-    </section>
-</footer>
-
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-<script src="/js/home.js"></script>
-
-</body>
-</html>
+<%- include('../partials/footer') %>
+</body></html>
