@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
+<head>
+    <title><%= titulo %> — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'erro' }) %>
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+    <main class="erro-pagina">
+        <strong>404</strong>
+        <h1><%= titulo %></h1>
+        <p><%= mensagem %></p>
+        <a
+            href="/"
+            class="botao-principal"
+        >Voltar ao início</a>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

@@ -1,66 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperar Senha - BioClicky</title>
-
-    <link rel="stylesheet" href="/css/login.css">
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <title>Recuperar senha — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'auth' }) %>
 </head>
-<body>
 
-<main>
-
-    <section class="left">
-
-        <header class="logo">
-            <ion-icon name="medical"></ion-icon>
-            <h1>BioClicky</h1>
-        </header>
-
-        <h2>Recuperar Senha</h2>
-
-        <p>
-            Informe seu e-mail para receber um link de recuperação.
-        </p>
-
-    </section>
-
-    <section class="right">
-
-        <form action="/forgot-password" method="POST">
-
-            <h2>Esqueceu a senha?</h2>
-
-            <p>
-                Digite o e-mail cadastrado na sua conta.
-            </p>
-
-            <label>Email</label>
-
-            <input
-                type="email"
-                name="email"
-                placeholder="seu@email.com"
-                required
+<body class="auth-body">
+    <!-- Conteúdo principal desta página. -->
+    <main class="auth-layout">
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="auth-apresentacao">
+            <%- include('../partials/auth-top') %>
+            <div>
+                <h1>Recuperação de senha</h1>
+                <p>Esta tela demonstra o fluxo que poderá ser ligado ao serviço de e-mail.</p>
+            </div>
+            <a href="/login">← Voltar ao login</a>
+        </section>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="auth-formulario">
+            <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+            <form
+                action="/senha"
+                method="POST"
+                class="auth-card"
             >
-
-            <button type="submit">
-                Enviar Link
-            </button>
-
-            <p class="register">
-                Lembrou sua senha?
-                <a href="/login">Voltar para login</a>
-            </p>
-
-        </form>
-
-    </section>
-
-</main>
-
+                <h2>Esqueceu a senha?</h2>
+                <!-- Mostra este trecho somente quando a condição for verdadeira. -->
+                <% if (enviado) { %>
+                    <p class="mensagem sucesso">Se o e-mail estiver cadastrado, enviaremos as
+                        instruções.</p>
+                <% } %>
+                <!-- Identifica o campo pelo mesmo valor de for e id. -->
+                <label for="email">E-mail cadastrado</label>
+                <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    required
+                >
+                <button class="botao-principal">Enviar instruções</button>
+            </form>
+        </section>
+    </main>
 </body>
+
 </html>

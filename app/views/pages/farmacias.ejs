@@ -1,486 +1,76 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmácias | BioClicky</title>
-    <link rel="stylesheet" href="/css/home.css">
-    <script src="/js/filtro-farmacias.js" defer></script>
+    <title>Farmácias — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'farmacias' }) %>
 </head>
 
 <body>
-  
-<!-- ===================================== HEADER ===================================== -->
-
-<header class="cabecalho">
-
-    <a href="/" class="logo">
-        <img src="/imagens/logo-header/logo-e-titulo.png" alt="BioClicky">
-    </a>
-
-    <nav class="menu-conVtainer">
-
-        <span class="indicador"></span>
-
-        <ul class="menu">
-            <li>
-                <a href="/">Início</a>
-            </li>
-
-            <li>
-                <a href="/remedios">Remédios</a>
-            </li>
-
-            <li>
-                <a href="/farmacias" class="ativo">Farmácias</a>
-            </li>
-
-            <li>
-                <a href="/categorias">Categorias</a>
-            </li>
-
-            <li>
-                <a href="/sobre">Sobre</a>
-            </li>
-    
-        </ul>
-
-    </nav>
-
-
-
-<!-- Bonequinho / Perfil -->
-<section class="perfil-menu">
-    <button class="perfil-botao" type="button">
-        <ion-icon name="person-outline"></ion-icon>
-    </button>
-    <section class="perfil-dropdown">
-        <p class="perfil-nome">bioclicky</p>
-        <a href="/perfil">Meu Perfil</a>
-        <a href="/logout" class="sair">Sair</a>
-    </section>
-</section>
-
-</header>
-
-
-<!-- ===================================== CONTEÚDO ===================================== -->
-
-<main class="farmacias-container">
-
-    <header class="farmacias-titulo">
-
-        <h1>Farmácias Parceiras</h1>
-
-        <p>
-            Encontre farmácias parceiras da BioClicky próximas de você.
-        </p>
-
-    </header>
-
-
-    <!-- ===================================== PESQUISA ===================================== -->
-
-    <form class="farmacias-pesquisa">
-
-        <ion-icon name="search-outline"></ion-icon>
-
-        <input
-            type="text"
-            placeholder="Pesquisar farmácia..."
-            class="searchInput"
+    <%- include('../partials/header') %>
+    <!-- Conteúdo principal desta página. -->
+    <main class="secao pagina-lista">
+        <!-- Cabeçalho da página ou desta seção. -->
+        <header class="pagina-topo">
+            <span class="sobrelinha">Onde encontrar</span>
+            <h1>Farmácias parceiras</h1>
+            <p>Consulte endereço, contato e avaliação das farmácias.</p>
+        </header>
+        <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+        <form
+            action="/farmacias"
+            method="GET"
+            class="busca-farmacia"
+            role="search"
         >
-
-    </form>
-
-
-    <!-- ===================================== FARMÁCIAS ===================================== -->
-
-    <section class="farmacias-grid">
-
-
-        <!-- ==================== DROGA RAIA ==================== -->
-
-        <article class="farmacia-card">
-
-            <figure class="farmacia-icone">
-                <ion-icon name="business-outline"></ion-icon>
-            </figure>
-
-            <section class="farmacia-info">
-
-                <header class="farmacia-topo">
-
-                    <h2>Droga Raia</h2>
-
-                    <span class="verificado">
-                        <ion-icon name="checkmark-circle"></ion-icon>
-                    </span>
-
-                </header>
-
-                <p class="nota">
-                    <ion-icon name="star"></ion-icon>
-                    4.3
-                </p>
-
-                <p>
-                    <ion-icon name="location-outline"></ion-icon>
-                    Rua Augusta, 2200 • São Paulo
-                </p>
-
-                <p>
-                    <ion-icon name="call-outline"></ion-icon>
-                    (11) 3120-5500
-                </p>
-
-            </section>
-
-            <small class="selo">
-                Parceira BioClicky
-            </small>
-
-        </article>
-
-
-        <!-- ==================== DROGASIL ==================== -->
-
-        <article class="farmacia-card">
-
-            <figure class="farmacia-icone">
-                <ion-icon name="business-outline"></ion-icon>
-            </figure>
-
-            <section class="farmacia-info">
-
-                <header class="farmacia-topo">
-
-                    <h2>Drogasil</h2>
-
-                    <span class="verificado">
-                        <ion-icon name="checkmark-circle"></ion-icon>
-                    </span>
-
-                </header>
-
-                <p class="nota">
-                    <ion-icon name="star"></ion-icon>
-                    4.5
-                </p>
-
-                <p>
-                    <ion-icon name="location-outline"></ion-icon>
-                    Avenida Paulista, 1540
-                </p>
-
-                <p>
-                    <ion-icon name="call-outline"></ion-icon>
-                    (11) 3254-1234
-                </p>
-
-                <small class="selo">
-                    Parceira BioClicky
-                </small>
-
-            </section>
-
-        </article>
-
-
-        <!-- ==================== ULTRAFARMA ==================== -->
-
-        <article class="farmacia-card">
-
-            <figure class="farmacia-icone">
-                <ion-icon name="business-outline"></ion-icon>
-            </figure>
-
-            <section class="farmacia-info">
-
-                <header class="farmacia-topo">
-
-                    <h2>Ultrafarma</h2>
-
-                    <span class="verificado">
-                        <ion-icon name="checkmark-circle"></ion-icon>
-                    </span>
-
-                </header>
-
-                <p class="nota">
-                    <ion-icon name="star"></ion-icon>
-                    4.4
-                </p>
-
-                <p>
-                    <ion-icon name="location-outline"></ion-icon>
-                    Rua Vergueiro, 800
-                </p>
-
-                <p>
-                    <ion-icon name="call-outline"></ion-icon>
-                    (11) 4002-8922
-                </p>
-
-                <small class="selo">
-                    Parceira BioClicky
-                </small>
-
-            </section>
-
-        </article>
-
-
-        <!-- ==================== PAGUE MENOS ==================== -->
-
-        <article class="farmacia-card">
-
-            <figure class="farmacia-icone">
-                <ion-icon name="business-outline"></ion-icon>
-            </figure>
-
-            <section class="farmacia-info">
-
-                <header class="farmacia-topo">
-
-                    <h2>Pague Menos</h2>
-
-                    <span class="verificado">
-                        <ion-icon name="checkmark-circle"></ion-icon>
-                    </span>
-
-                </header>
-
-                <p class="nota">
-                    <ion-icon name="star"></ion-icon>
-                    4.2
-                </p>
-
-                <p>
-                    <ion-icon name="location-outline"></ion-icon>
-                    Av. Brigadeiro Faria Lima, 1800
-                </p>
-
-                <p>
-                    <ion-icon name="call-outline"></ion-icon>
-                    (11) 4004-8000
-                </p>
-
-                <small class="selo">
-                    Parceira BioClicky
-                </small>
-
-            </section>
-
-        </article>
-
-
-        <!-- ==================== DROGARIA SÃO PAULO ==================== -->
-
-        <article class="farmacia-card">
-
-            <figure class="farmacia-icone">
-                <ion-icon name="business-outline"></ion-icon>
-            </figure>
-
-            <section class="farmacia-info">
-
-                <header class="farmacia-topo">
-
-                    <h2>Drogaria São Paulo</h2>
-
-                    <span class="verificado">
-                        <ion-icon name="checkmark-circle"></ion-icon>
-                    </span>
-
-                </header>
-
-                <p class="nota">
-                    <ion-icon name="star"></ion-icon>
-                    4.6
-                </p>
-
-                <p>
-                    <ion-icon name="location-outline"></ion-icon>
-                    Rua Haddock Lobo, 950
-                </p>
-
-                <p>
-                    <ion-icon name="call-outline"></ion-icon>
-                    (11) 3333-4500
-                </p>
-
-                <small class="selo">
-                    Parceira BioClicky
-                </small>
-
-            </section>
-
-        </article>
-
-
-        <!-- ==================== ONOFRE ==================== -->
-
-        <article class="farmacia-card">
-
-            <figure class="farmacia-icone">
-                <ion-icon name="business-outline"></ion-icon>
-            </figure>
-
-            <section class="farmacia-info">
-
-                <header class="farmacia-topo">
-
-                    <h2>Onofre</h2>
-
-                    <span class="verificado">
-                        <ion-icon name="checkmark-circle"></ion-icon>
-                    </span>
-
-                </header>
-
-                <p class="nota">
-                    <ion-icon name="star"></ion-icon>
-                    4.1
-                </p>
-
-                <p>
-                    <ion-icon name="location-outline"></ion-icon>
-                    Rua Oscar Freire, 540
-                </p>
-
-                <p>
-                    <ion-icon name="call-outline"></ion-icon>
-                    (11) 3890-1000
-                </p>
-
-                <small class="selo">
-                    Parceira BioClicky
-                </small>
-
-            </section>
-
-        </article>
-
-    </section>
-
-</main>
-
-<!-- ===================================== FOOSTER ===================================== -->
-<footer class="footer">
-
-    <section class="footer-container">
-
-        <section>
-
-            <img src="/imagens/logo-header/logo-branca.png" alt="BioClicky" class="footer-logo">
-
-            <p>
-                Plataforma para comparação de preços de medicamentos
-                em farmácias próximas de você.
-            </p>
-
+            <label for="q">Buscar farmácia ou cidade</label>
+            <div>
+                <input
+                    id="q"
+                    type="search"
+                    name="q"
+                    value="<%= busca %>"
+                    placeholder="Ex.: Drogasil ou São Paulo"
+                >
+                <button>Buscar</button>
+            </div>
+        </form>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="grade-farmacias">
+            <!-- Mostra este trecho somente quando a condição for verdadeira. -->
+            <% if (!farmacias.length) { %>
+                <div class="vazio">
+                    <h2>Nenhuma farmácia encontrada</h2>
+                    <a href="/farmacias">Limpar busca</a>
+                </div>
+            <% } %>
+            <!-- Repete este trecho para cada item enviado pela rota. -->
+            <% farmacias.forEach(farmacia => { %>
+                <article class="farmacia-card">
+                    <div class="farmacia-icone">
+                        <ion-icon name="business-outline">
+                        </ion-icon>
+                    </div>
+                    <div>
+                        <span class="parceira">
+                            <ion-icon name="checkmark-circle">
+                            </ion-icon> Parceira verificada
+                        </span>
+                        <h2><%= farmacia.nome %> </h2>
+                        <p>
+                            <ion-icon name="star">
+                            </ion-icon> <%= farmacia.nota %> · <%= farmacia.cidade %>
+                        </p>
+                        <address><%= farmacia.endereco %></address>
+                        <a href="tel:<%= farmacia.telefone.replace(/\D/g, '') %>"><%= farmacia.telefone %></a>
+                    </div>
+                </article>
+            <% }) %>
         </section>
-
-        <section>
-
-            <h3>Navegação</h3>
-
-            <a href="/">Início</a>
-            <a href="/remedios">Remédios</a>
-            <a href="/farmacias">Farmácias</a>
-            <a href="/categorias">Categorias</a>
-
-        </section>
-
-        <section>
-
-            <h3>Institucional</h3>
-
-            <a href="/sobre">Sobre nós</a>
-            <a href="#">Termos de uso</a>
-            <a href="#">Privacidade</a>
-
-        </section>
-
-        <section>
-
-            <h3>Contato</h3>
-
-            <p>contato@bioclicky.com.br</p>
-            <p>(11) 99999-9999</p>
-
-        </section>
-
-    </section>
-
-    <section class="footer-bottom">
-        © 2026 BioClicky. Todos os direitos reservados.
-    </section>
-
-</footer>
-<!-- ===================================== IONICONS ===================================== -->
-
-<script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
-</script>
-
-<script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
-</script>
-
+    </main>
+    <%- include('../partials/footer') %>
 </body>
+
 </html>

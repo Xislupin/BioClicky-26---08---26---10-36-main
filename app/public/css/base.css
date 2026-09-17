@@ -1,0 +1,570 @@
+/* BASE: regras comuns a todas as páginas. O projeto começa pelo celular. */
+:root {
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --verde: #18794e;
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --verde-escuro: #0d5b3a;
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --verde-claro: #eaf7f0;
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --menta: #f5fbf7;
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --texto: #18302a;
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --cinza: #5f706b;
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --linha: #dce8e2;
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --branco: #fff;
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --perigo: #b42318;
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --sombra: 0 12px 32px rgba(21, 66, 48, .09);
+    /* Guarda um valor reutilizado com var() no restante dos estilos. */
+    --raio: 18px;
+}
+
+/* Estiliza *. */
+* {
+    /* Inclui borda e preenchimento no cálculo das dimensões. */
+    box-sizing: border-box;
+}
+
+/* Estiliza html. */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estiliza body. */
+body {
+    /* Define o espaço externo nesta direção. */
+    margin: 0;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--texto);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fff;
+    /* Escolhe a fonte e as alternativas disponíveis. */
+    font-family: Arial, Helvetica, sans-serif;
+    /* Define o tamanho do texto. */
+    font-size: 16px;
+    /* Define o espaço entre as linhas de texto. */
+    line-height: 1.55;
+}
+
+/* Estiliza img. */
+img {
+    /* Define como os elementos são organizados. */
+    display: block;
+    /* Limita a largura máxima. */
+    max-width: 100%;
+}
+
+/* Estiliza a. */
+a {
+    /* Define a cor do texto ou do ícone. */
+    color: inherit;
+    /* Define sublinhado ou outra decoração do texto. */
+    text-decoration: none;
+}
+
+/* Estiliza button,input,select. */
+button,
+input,
+select {
+    font: inherit;
+}
+
+/* Estiliza button,a. */
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Estiliza :focus-visible. */
+:focus-visible {
+    /* Define o contorno, usado também para indicar foco pelo teclado. */
+    outline: 3px solid #f2b705;
+    outline-offset: 3px;
+}
+
+/* Estiliza h1,h2,h3,p. */
+h1,
+h2,
+h3,
+p {
+    /* Define o espaço externo nesta direção. */
+    margin-top: 0;
+}
+
+/* Estiliza h1. */
+h1 {
+    /* Define o tamanho do texto. */
+    font-size: clamp(2rem, 8vw, 3.6rem);
+    /* Define o espaço entre as linhas de texto. */
+    line-height: 1.08;
+    /* Ajusta o espaço entre as letras. */
+    letter-spacing: -.04em;
+}
+
+/* Estiliza h2. */
+h2 {
+    /* Define o tamanho do texto. */
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    /* Define o espaço entre as linhas de texto. */
+    line-height: 1.18;
+}
+
+/* Estiliza .sr-only. */
+.sr-only {
+    /* Define o tipo de posicionamento do elemento. */
+    position: absolute;
+    /* Define a largura. */
+    width: 1px;
+    /* Define a altura. */
+    height: 1px;
+    /* Define o espaço interno nesta direção. */
+    padding: 0;
+    /* Define o espaço externo nesta direção. */
+    margin: -1px;
+    /* Controla o conteúdo que ultrapassa a área disponível. */
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    /* Controla a quebra de linhas e os espaços do texto. */
+    white-space: nowrap;
+    /* Define a borda ao redor do elemento. */
+    border: 0;
+}
+
+/* Estiliza .secao. */
+.secao {
+    /* Define a largura. */
+    width: min(1120px, calc(100% - 32px));
+    /* Define o espaço externo nesta direção. */
+    margin-inline: auto;
+    /* Define o espaço interno nesta direção. */
+    padding-block: 64px;
+}
+
+/* Títulos menores nas páginas públicas; não altera o painel administrativo. */
+.pagina-topo h1 {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+}
+
+/* Usa menos espaço vertical nas telas de consulta. */
+.pagina-lista {
+    padding-block: 36px;
+}
+
+/* Estiliza .sobrelinha. */
+.sobrelinha {
+    /* Define como os elementos são organizados. */
+    display: block;
+    /* Define o espaço externo nesta direção. */
+    margin-bottom: 8px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define o tamanho do texto. */
+    font-size: .8rem;
+    /* Define a espessura das letras. */
+    font-weight: 800;
+    /* Ajusta o espaço entre as letras. */
+    letter-spacing: .12em;
+    /* Altera a apresentação de maiúsculas e minúsculas. */
+    text-transform: uppercase;
+}
+
+/* Estiliza .pagina-topo. */
+.pagina-topo {
+    /* Limita a largura máxima. */
+    max-width: 690px;
+    /* Define o espaço externo nesta direção. */
+    margin-bottom: 28px;
+}
+
+/* Estiliza .pagina-topo p. */
+.pagina-topo p {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+    /* Define o tamanho do texto. */
+    font-size: 1.05rem;
+}
+
+/* Estiliza .mensagem. */
+.mensagem {
+    /* Define o espaço interno nesta direção. */
+    padding: 12px 14px;
+    /* Arredonda os cantos. */
+    border-radius: 10px;
+}
+
+/* Estiliza .erro. */
+.erro {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--perigo);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fff0ee;
+}
+
+/* Estiliza .sucesso. */
+.sucesso {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde-escuro);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--verde-claro);
+}
+
+/* Estiliza .botao-principal. */
+.botao-principal {
+    /* Define como os elementos são organizados. */
+    display: inline-flex;
+    /* Distribui os itens no eixo principal. */
+    justify-content: center;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 48px;
+    /* Define o espaço interno nesta direção. */
+    padding: 12px 20px;
+    /* Define a cor do texto ou do ícone. */
+    color: #fff;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--verde);
+    /* Define a borda ao redor do elemento. */
+    border: 0;
+    /* Arredonda os cantos. */
+    border-radius: 12px;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+    /* Define o ponteiro mostrado ao passar sobre o elemento. */
+    cursor: pointer;
+}
+
+/* Estiliza .botao-principal:hover. */
+.botao-principal:hover {
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--verde-escuro);
+}
+
+/* Estiliza .botao-secundario. */
+.botao-secundario {
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 46px;
+    /* Define o espaço interno nesta direção. */
+    padding: 10px 18px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fff;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: 12px;
+    /* Define o ponteiro mostrado ao passar sobre o elemento. */
+    cursor: pointer;
+}
+
+/* Estiliza .vazio. */
+.vazio {
+    /* Escolhe as colunas ocupadas pelo elemento. */
+    grid-column: 1/-1;
+    /* Define o espaço interno nesta direção. */
+    padding: 40px 20px;
+    /* Alinha o texto dentro do elemento. */
+    text-align: center;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--menta);
+    /* Arredonda os cantos. */
+    border-radius: var(--raio);
+}
+
+/* Cabeçalho móvel: logo, conta central e menu à direita. */
+.cabecalho {
+    /* Define o tipo de posicionamento do elemento. */
+    position: sticky;
+    top: 0;
+    /* Define a ordem de sobreposição. */
+    z-index: 20;
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define a quantidade e a largura das colunas. */
+    grid-template-columns: 1fr auto auto;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 70px;
+    /* Define o espaço interno nesta direção. */
+    padding: 10px 16px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: rgba(255, 255, 255, .96);
+    border-bottom: 1px solid var(--linha);
+    /* Aplica um efeito ao conteúdo atrás do elemento. */
+    backdrop-filter: blur(10px);
+}
+
+/* Estiliza .logo img. */
+.logo img {
+    /* Define a largura. */
+    width: 132px;
+}
+
+/* Estiliza .menu-mobile. */
+.menu-mobile {
+    /* Escolhe as colunas ocupadas pelo elemento. */
+    grid-column: 3;
+    /* Define a largura. */
+    width: 44px;
+    /* Define a altura. */
+    height: 44px;
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Centraliza ou alinha os itens nos dois eixos. */
+    place-items: center;
+    /* Define o espaço interno nesta direção. */
+    padding: 0;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--texto);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #fff;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: 12px;
+    /* Define o tamanho do texto. */
+    font-size: 1.7rem;
+    /* Define o ponteiro mostrado ao passar sobre o elemento. */
+    cursor: pointer;
+}
+
+/* Estiliza .navegacao. */
+.navegacao {
+    /* Escolhe as colunas ocupadas pelo elemento. */
+    grid-column: 1/-1;
+    /* Escolhe as linhas ocupadas pelo elemento. */
+    grid-row: 2;
+}
+
+/* Estiliza .menu. */
+.menu {
+    /* Define como os elementos são organizados. */
+    display: none;
+    list-style: none;
+    /* Define o espaço externo nesta direção. */
+    margin: 10px 0 4px;
+    /* Define o espaço interno nesta direção. */
+    padding: 8px;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--menta);
+    /* Arredonda os cantos. */
+    border-radius: 14px;
+}
+
+/* Estiliza .menu.aberto. */
+.menu.aberto {
+    /* Define como os elementos são organizados. */
+    display: block;
+}
+
+/* Estiliza .menu a. */
+.menu a {
+    /* Define como os elementos são organizados. */
+    display: block;
+    /* Define o espaço interno nesta direção. */
+    padding: 12px;
+    /* Arredonda os cantos. */
+    border-radius: 9px;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .menu a.ativo,.menu a:hover. */
+.menu a.ativo,
+.menu a:hover {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde-escuro);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: var(--verde-claro);
+}
+
+/* Estiliza .conta. */
+.conta {
+    /* Escolhe as colunas ocupadas pelo elemento. */
+    grid-column: 2;
+    /* Escolhe as linhas ocupadas pelo elemento. */
+    grid-row: 1;
+    /* Define como os elementos são organizados. */
+    display: flex;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+    /* Define o espaço entre os itens. */
+    gap: 5px;
+    /* Define o espaço externo nesta direção. */
+    margin-right: 8px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde-escuro);
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .conta ion-icon. */
+.conta ion-icon {
+    /* Define o tamanho do texto. */
+    font-size: 1.3rem;
+}
+
+/* Estiliza .conta span. */
+.conta span {
+    /* Define o tamanho do texto. */
+    font-size: .9rem;
+}
+
+/* Estiliza .rodape. */
+
+.rodape {
+    /* Define o espaço interno nesta direção. */
+    padding: 40px 20px 24px;
+    /* Define a cor do texto ou do ícone. */
+    color: #dff4e8;
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #103b2d;
+}
+
+/* Estiliza .rodape-conteudo. */
+.rodape-conteudo {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define o espaço entre os itens. */
+    gap: 24px;
+    /* Define a largura. */
+    width: min(1120px, 100%);
+    /* Define o espaço externo nesta direção. */
+    margin: auto;
+}
+
+/* Estiliza .rodape strong. */
+.rodape strong {
+    /* Define a cor do texto ou do ícone. */
+    color: #fff;
+    /* Define o tamanho do texto. */
+    font-size: 1.4rem;
+}
+
+/* Estiliza .rodape p. */
+.rodape p {
+    /* Define o espaço externo nesta direção. */
+    margin: 5px 0;
+}
+
+/* Estiliza .rodape nav. */
+.rodape nav {
+    /* Define como os elementos são organizados. */
+    display: flex;
+    /* Permite quebrar os itens em novas linhas. */
+    flex-wrap: wrap;
+    /* Define o espaço entre os itens. */
+    gap: 12px 20px;
+}
+
+/* Estiliza .rodape nav a:hover. */
+.rodape nav a:hover {
+    /* Define a cor do texto ou do ícone. */
+    color: #fff;
+    /* Define sublinhado ou outra decoração do texto. */
+    text-decoration: underline;
+}
+
+/* Estiliza .aviso,.direitos. */
+.aviso,
+.direitos {
+    /* Define a largura. */
+    width: min(1120px, 100%);
+    /* Define o espaço externo nesta direção. */
+    margin: 24px auto 0 !important;
+    /* Define o espaço interno nesta direção. */
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, .16);
+    /* Define o tamanho do texto. */
+    font-size: .86rem;
+}
+
+/* Estiliza .direitos. */
+.direitos {
+    /* Define o espaço externo nesta direção. */
+    margin-top: 8px !important;
+    /* Define o espaço interno nesta direção. */
+    padding-top: 0;
+    /* Define a borda ao redor do elemento. */
+    border: 0;
+    /* Define a cor do texto ou do ícone. */
+    color: #a9cab9;
+}
+
+/* Adapta o layout quando a tela atende a (min-width:800px). */
+
+@media (min-width:800px) {
+
+    /* Estiliza .cabecalho. */
+    .cabecalho {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: auto 1fr auto;
+        /* Define o espaço interno nesta direção. */
+        padding-inline: max(28px, calc((100vw - 1120px)/2));
+    }
+
+    /* Estiliza .menu-mobile. */
+    .menu-mobile {
+        /* Define como os elementos são organizados. */
+        display: none;
+    }
+
+    /* Estiliza .navegacao. */
+    .navegacao {
+        /* Escolhe as colunas ocupadas pelo elemento. */
+        grid-column: 2;
+        /* Escolhe as linhas ocupadas pelo elemento. */
+        grid-row: 1;
+    }
+
+    /* Estiliza .menu,.menu.aberto. */
+    .menu,
+    .menu.aberto {
+        /* Define como os elementos são organizados. */
+        display: flex;
+        /* Distribui os itens no eixo principal. */
+        justify-content: center;
+        /* Define o espaço entre os itens. */
+        gap: 2px;
+        /* Define o espaço externo nesta direção. */
+        margin: 0;
+        /* Define o espaço interno nesta direção. */
+        padding: 0;
+        /* Define a cor ou o preenchimento de fundo. */
+        background: transparent;
+    }
+
+    /* Estiliza .menu a. */
+    .menu a {
+        /* Define o espaço interno nesta direção. */
+        padding: 10px 12px;
+    }
+
+    /* Estiliza .conta. */
+    .conta {
+        /* Escolhe as colunas ocupadas pelo elemento. */
+        grid-column: 3;
+        /* Define o espaço externo nesta direção. */
+        margin: 0;
+        /* Define o espaço interno nesta direção. */
+        padding: 9px 14px;
+        /* Define a borda ao redor do elemento. */
+        border: 1px solid var(--linha);
+        /* Arredonda os cantos. */
+        border-radius: 10px;
+    }
+
+    /* Estiliza .rodape-conteudo. */
+    .rodape-conteudo {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: 1fr auto;
+        /* Alinha os itens no eixo transversal. */
+        align-items: start;
+    }
+}

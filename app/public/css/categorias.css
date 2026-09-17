@@ -1,0 +1,84 @@
+/* Estiliza .grade-categorias. */
+.grade-categorias {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define o espaço entre os itens. */
+    gap: 13px;
+}
+
+/* Estiliza .categoria-card. */
+.categoria-card {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define a quantidade e a largura das colunas. */
+    grid-template-columns: auto 1fr auto;
+    /* Define o espaço entre os itens. */
+    gap: 15px;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+    /* Define o espaço interno nesta direção. */
+    padding: 18px;
+    /* Define a borda ao redor do elemento. */
+    border-bottom: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: 0;
+}
+
+/* Estiliza .categoria-card:hover. */
+.categoria-card:hover {
+    border-color: var(--verde);
+    /* Define a sombra do elemento. */
+    box-shadow: none;
+}
+
+/* Estiliza .categoria-card>ion-icon:first-child. */
+.categoria-card>ion-icon:first-child {
+    /* Define o espaço interno nesta direção. */
+    padding: 12px;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: transparent;
+    /* Arredonda os cantos. */
+    border-radius: 13px;
+    /* Define o tamanho do texto. */
+    font-size: 1.6rem;
+}
+
+/* Estiliza .categoria-card>ion-icon:last-child. */
+.categoria-card>ion-icon:last-child {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+}
+
+/* Estiliza .categoria-card h2. */
+.categoria-card h2 {
+    /* Define o espaço externo nesta direção. */
+    margin: 0 0 3px;
+    /* Define o tamanho do texto. */
+    font-size: 1.15rem;
+}
+
+/* Estiliza .categoria-card p. */
+.categoria-card p {
+    /* Define o espaço externo nesta direção. */
+    margin: 0;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Estiliza .categoria-card small. */
+.categoria-card small {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+}
+
+/* Adapta o layout quando a tela atende a (min-width:720px). */
+@media(min-width:720px) {
+
+    /* Estiliza .grade-categorias. */
+    .grade-categorias {
+        /* Define a quantidade e a largura das colunas. */
+        grid-template-columns: repeat(2, 1fr)
+    }
+}

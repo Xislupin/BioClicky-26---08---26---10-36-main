@@ -1,3 +1,5 @@
+// Filtro antigo no navegador, não carregado nas páginas atuais.
+// A busca atual usa o formulário GET e a rota /remedios em router.js.
 const listaRemedios = document.querySelector('.lista-remedios');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.forEach(card => {
 
             const nome = card.querySelector('h3')?.textContent.toLowerCase() || '';
-            const descricao = card.querySelector('.remedio-info small')?.textContent.toLowerCase() || '';
+            const descricao = card.querySelector('.remedio-info small')?.textContent
+                .toLowerCase() || '';
 
             // Verifica se o texto digitado bate com nome ou descrição
             const correspondeBusca =

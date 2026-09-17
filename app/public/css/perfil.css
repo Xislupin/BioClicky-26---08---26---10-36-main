@@ -1,0 +1,89 @@
+/* Estiliza .perfil-pagina. */
+.perfil-pagina {
+    /* Limita a largura máxima. */
+    max-width: 760px;
+}
+
+/* Estiliza .perfil-pagina>header p. */
+.perfil-pagina>header p {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Estiliza .perfil-card. */
+.perfil-card {
+    /* Define o espaço interno nesta direção. */
+    padding: 20px;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: var(--raio);
+    /* Define a sombra do elemento. */
+    box-shadow: var(--sombra);
+}
+
+/* Estiliza .perfil-card form:first-of-type. */
+.perfil-card form:first-of-type {
+    /* Define como os elementos são organizados. */
+    display: grid;
+    /* Define o espaço entre os itens. */
+    gap: 8px;
+}
+
+/* Estiliza .perfil-card label. */
+.perfil-card label {
+    /* Define o espaço externo nesta direção. */
+    margin-top: 7px;
+    /* Define a espessura das letras. */
+    font-weight: 700;
+}
+
+/* Estiliza .perfil-card input. */
+.perfil-card input {
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 48px;
+    /* Define o espaço interno nesta direção. */
+    padding: 10px 12px;
+    /* Define a borda ao redor do elemento. */
+    border: 1px solid var(--linha);
+    /* Arredonda os cantos. */
+    border-radius: 10px;
+}
+
+/* Estiliza .perfil-card input[readonly]. */
+.perfil-card input[readonly] {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+    /* Define a cor ou o preenchimento de fundo. */
+    background: #f3f5f4;
+}
+
+/* Estiliza .perfil-card .botao-principal. */
+.perfil-card .botao-principal {
+    /* Define o espaço externo nesta direção. */
+    margin-top: 12px;
+}
+
+/* Estiliza .perfil-card form:last-child. */
+.perfil-card form:last-child {
+    /* Define o espaço externo nesta direção. */
+    margin-top: 12px;
+}
+
+/* Estiliza .perfil-card .botao-secundario. */
+.perfil-card .botao-secundario {
+    /* Define a largura. */
+    width: 100%;
+    /* Define a cor do texto ou do ícone. */
+    color: var(--perigo);
+}
+
+/* Adapta o layout quando a tela atende a (min-width:650px). */
+@media(min-width:650px) {
+
+    /* Estiliza .perfil-card. */
+    .perfil-card {
+        /* Define o espaço interno nesta direção. */
+        padding: 30px
+    }
+}

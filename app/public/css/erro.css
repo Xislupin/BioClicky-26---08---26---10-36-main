@@ -1,0 +1,45 @@
+/* Estiliza .erro-pagina. */
+.erro-pagina {
+    /* Define a altura mínima, inclusive da área de toque. */
+    min-height: 65vh;
+    /* Define como os elementos são organizados. */
+    display: flex;
+    /* Define se os itens ficam em linha ou em coluna. */
+    flex-direction: column;
+    /* Distribui os itens no eixo principal. */
+    justify-content: center;
+    /* Alinha os itens no eixo transversal. */
+    align-items: center;
+    /* Define o espaço interno nesta direção. */
+    padding: 40px 20px;
+    /* Alinha o texto dentro do elemento. */
+    text-align: center;
+}
+
+/* Estiliza .erro-pagina>strong. */
+.erro-pagina>strong {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--verde);
+    /* Define o tamanho do texto. */
+    font-size: 5rem;
+    /* Define o espaço entre as linhas de texto. */
+    line-height: 1;
+}
+
+/* Estiliza .erro-pagina h1. */
+.erro-pagina h1 {
+    /* Define o espaço externo nesta direção. */
+    margin: 15px 0 8px;
+}
+
+/* Estiliza .erro-pagina p. */
+.erro-pagina p {
+    /* Define a cor do texto ou do ícone. */
+    color: var(--cinza);
+}
+
+/* Estiliza .erro-pagina a. */
+.erro-pagina a {
+    /* Define o espaço externo nesta direção. */
+    margin-top: 15px;
+}

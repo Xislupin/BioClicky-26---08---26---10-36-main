@@ -1,179 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - BioClicky</title>
-    <link rel="stylesheet" href="/css/home.css">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Sobre — BioClicky</title>
+    <%- include('../partials/head', { cssPagina: 'sobre' }) %>
 </head>
 
-<body class="internal-body">
-    <header class="cabecalho">
-        <a href="/" class="logo">
-            <img src="/imagens/logo-header/logo-e-titulo.png" alt="BioClicky">
-        </a>
-        <nav class="menu-container">
-            <span class="indicador"></span>
-            <ul class="menu">
-                <li><a href="/">Início</a></li>
-                <li><a href="/remedios">Remédios</a></li>
-                <li><a href="/farmacias">Farmácias</a></li>
-                <li><a href="/categorias">Categorias</a></li>
-                <li><a href="/sobre" class="ativo">Sobre</a></li>
-            </ul>
-        </nav>
-
-        <!-- Bonequinho / Perfil -->
-        <section class="perfil-menu">
-            <button class="perfil-botao" type="button">
-                <ion-icon name="person-outline"></ion-icon>
-            </button>
-            <section class="perfil-dropdown">
-                <p class="perfil-nome">bioclicky</p>
-                <a href="/perfil">Meu Perfil</a>
-                <a href="/logout" class="sair">Sair</a>
-            </section>
+<body>
+    <%- include('../partials/header') %>
+    <!-- Conteúdo principal desta página. -->
+    <main>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="sobre-hero">
+            <h1>Sobre o BioClicky</h1>
+            <p>O BioClicky nasceu para ajudar pessoas, especialmente idosos e suas famílias, a
+                comparar preços de medicamentos sem enfrentar telas complicadas.</p>
         </section>
-    </header>
-
-    <section class="sobre-hero">
-        <img src="/imagens/logo-header/logo-e-titulo.png" alt="BioClicky">
-        <h1>Sobre o BioClicky</h1>
-        <p>
-            BioClicky é uma plataforma que ajuda você a encontrar e comparar preços
-            de medicamentos em farmácias próximas, de forma rápida, segura e gratuita.
-        </p>
-    </section>
-    <section class="sobre-missao">
-        <section class="sobre-texto">
-            <h2>Nossa Missão</h2>
-
-            <p>
-                Acreditamos que saúde não deveria ser um luxo. Por isso,
-                criamos o BioClicky para facilitar a busca por medicamentos
-                acessíveis. Nossa plataforma compara preços em diversas
-                farmácias da sua região, garantindo que você encontre a
-                melhor opção sem sair de casa.
-            </p>
-
-            <p>
-                Com o BioClicky, você economiza tempo e dinheiro,
-                podendo focar no que realmente importa: sua saúde e bem-estar.
-            </p>
-
-        </section>
-        <section class="sobre-icone">
-            <ion-icon name="heart-outline"></ion-icon>
-        </section>
-
-    </section>
-    <section class="sobre-valores">
-        <h2>Nossos Valores</h2>
-        <section class="valores-grid">
-            <article class="valor-card">
-                <section class="valor-icone">
-                    <ion-icon name="trending-down-outline"></ion-icon>
-                </section>
-                <h3>Economia</h3>
-                <p>
-                    Ajudamos você a encontrar os melhores preços de medicamentos,
-                    economizando no seu tratamento.
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="secao missao">
+            <div>
+                <h2>Por que criamos o site?</h2>
+                <p>Reunimos preços de diferentes farmácias em uma experiência simples, legível e
+                    direta. Assim, o usuário pode tomar uma decisão melhor antes de sair de casa.
                 </p>
+            </div>
+            <ion-icon name="heart-outline">
+            </ion-icon>
+        </section>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="secao valores">
+            <article>
+                <ion-icon name="eye-outline">
+                </ion-icon>
+                <h2>Clareza</h2>
+                <p>Informações fáceis de encontrar e entender.</p>
             </article>
-
-            <article class="valor-card">
-                <section class="valor-icone">
-                    <ion-icon name="location-outline"></ion-icon>
-                </section>
-                <h3>Proximidade</h3>
-                <p>
-                    Mostramos farmácias perto de você com preços competitivos,
-                    facilitando a compra.
-                </p>
+            <article>
+                <ion-icon name="accessibility-outline">
+                </ion-icon>
+                <h2>Acessibilidade</h2>
+                <p>Botões grandes, bom contraste e uso simples.</p>
             </article>
-
-            <article class="valor-card">
-                <section class="valor-icone">
-                    <ion-icon name="shield-checkmark-outline"></ion-icon>
-                </section>
-                <h3>Confiança</h3>
-                <p>
-                    Trabalhamos apenas com farmácias verificadas e dados atualizados.
-                </p>
-            </article>
-
-            <article class="valor-card">
-                <section class="valor-icone">
-                    <ion-icon name="people-outline"></ion-icon>
-                </section>
-                <h3>Acessibilidade</h3>
-                <p>
-                    Democratizamos o acesso a medicamentos acessíveis para todos.
-                </p>
+            <article>
+                <ion-icon name="shield-checkmark-outline">
+                </ion-icon>
+                <h2>Responsabilidade</h2>
+                <p>Comparar preços sem incentivar automedicação.</p>
             </article>
         </section>
-    </section>
-
-    <section class="sobre-passos">
-        <h2>Como Funciona</h2>
-        <section class="passos-grid">
-            <article class="passo">
-                <span class="numero">1</span>
-                <h3>Pesquise</h3>
-                <p>Digite o nome do medicamento que você precisa.</p>
-            </article>
-            <article class="passo">
-                <span class="numero">2</span>
-                <h3>Compare</h3>
-                <p>Veja os preços em diversas farmácias próximas.</p>
-            </article>
-            <article class="passo">
-                <span class="numero">3</span>
-                <h3>Economize</h3>
-                <p>Escolha a melhor oferta e vá até a farmácia.</p>
-            </article>
-        </section>
-    </section>
-
-
-    <footer class="footer">
-        <section class="footer-container">
-            <section>
-                <img src="/imagens/bioclicky_branco.png" alt="BioClicky" class="logo-header">
-                <p>
-                    Plataforma para comparação de preços de medicamentos
-                    em farmácias próximas de você.
-                </p>
-            </section>
-
-            <section>
-                <h3>Navegação</h3>
-                <a href="/">Início</a>
-                <a href="/remedios">Remédios</a>
-                <a href="/farmacias">Farmácias</a>
-                <a href="/categorias">Categorias</a>
-            </section>
-
-            <section>
-                <h3>Institucional</h3>
-                <a href="/sobre">Sobre nós</a>
-                <a href="#">Termos de uso</a>
-                <a href="#">Privacidade</a>
-            </section>
-
-            <section>
-                <h3>Contato</h3>
-                <p>contato@bioclicky.com.br</p>
-                <p>(11) 99999-9999</p>
-            </section>
-        </section>
-
-        <section class="footer-bottom">
-            © 2026 BioClicky. Todos os direitos reservados.
-        </section>
-        
-    </footer>
+    </main>
+    <%- include('../partials/footer') %>
 </body>
+
 </html>

@@ -1,31 +1,94 @@
+<!-- Cabeçalho da página ou desta seção. -->
 <header class="cabecalho">
-
-    <a href="#" class="logo">
-        <img src="/imagens/logo-header/logo-e-titulo.png" alt="BioClicky">
-    </a>
-
-    <nav class="menu-container">
-
-        <span class="indicador"></span>
-
-        <ul class="menu">
-            <li><a href="#" class="ativo">Início</a></li>
-            <li><a href="/remedios">Remédios</a></li>
-            <li><a href="/farmacias">Farmácias</a></li>
-            <li><a href="/categorias">Categorias</a></li>
-            <li><a href="/sobre">Sobre</a></li>
-        </ul>
-
-    </nav>
-
-
-    <button
-        type="button"
-        class="entrar"
-        onclick="window.location.href='/login'"
+    <a
+        href="/"
+        class="logo"
+        aria-label="Página inicial do BioClicky"
     >
-        <ion-icon name="person-outline"></ion-icon>
-        Entrar
+        <img
+            src="/imagens/logo-header/logo-e-titulo.png"
+            alt="BioClicky"
+        >
+    </a>
+    <!-- Botão: envia o formulário ou executa a ação definida no JavaScript. -->
+    <button
+        class="menu-mobile"
+        type="button"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+        aria-label="Abrir menu"
+    >
+        <ion-icon
+            name="menu-outline"
+            aria-hidden="true"
+        >
+        </ion-icon>
     </button>
-
+    <!-- Links de navegação. -->
+    <nav
+        class="navegacao"
+        aria-label="Navegação principal"
+    >
+        <ul
+            class="menu"
+            id="menu-principal"
+        >
+            <li>
+                <a
+                    href="/"
+                    class="<%= rotaAtual === '/' ? 'ativo' : '' %>"
+                >Início</a>
+            </li>
+            <li>
+                <a
+                    href="/remedios"
+                    class="<%= rotaAtual === '/remedios' ? 'ativo' : '' %>"
+                >Remédios</a>
+            </li>
+            <li>
+                <a
+                    href="/farmacias"
+                    class="<%= rotaAtual === '/farmacias' ? 'ativo' : '' %>"
+                >Farmácias</a>
+            </li>
+            <li>
+                <a
+                    href="/categorias"
+                    class="<%= rotaAtual === '/categorias' ? 'ativo' : '' %>"
+                >Categorias</a>
+            </li>
+            <li>
+                <a
+                    href="/sobre"
+                    class="<%= rotaAtual === '/sobre' ? 'ativo' : '' %>"
+                >Sobre</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Mostra este trecho somente quando a condição for verdadeira. -->
+    <% if (logado) { %>
+        <a
+            href="/perfil"
+            class="conta"
+        >
+            <ion-icon
+                name="person-outline"
+                aria-hidden="true"
+            >
+            </ion-icon>
+            <span>Perfil</span>
+        </a>
+    <% } else { %>
+        <a
+            href="/login"
+            class="conta"
+        >
+            <ion-icon
+                name="person-outline"
+                aria-hidden="true"
+            >
+            </ion-icon>
+            <span>Entrar</span>
+        </a>
+    <% } %>
 </header>

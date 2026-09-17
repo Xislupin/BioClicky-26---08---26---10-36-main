@@ -1,172 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<!-- Configura título, estilos e scripts da página. -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Meu Perfil - BioClicky</title>
-
-    <link rel="stylesheet" href="/css/home.css">
-
-    <script type="module"
-        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
-    </script>
-
-    <script nomodule
-        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
-    </script>
+    <title>Meu perfil — BioClicky</title>
+    <!-- Reutiliza o arquivo parcial indicado, evitando copiar o mesmo código. -->
+    <%- include('../partials/head', { cssPagina: 'perfil' }) %>
 </head>
 
 <body>
-
-
- <header class="cabecalho">
-
-    <a href="/" class="logo">
-        <img src="/imagens/logo-header/logo-e-titulo.png" alt="BioClicky">
-    </a>
-
-    <nav class="menu-container">
-
-        <span class="indicador"></span>
-
-        <ul class="menu">
-            <li>
-                <a href="/">Início</a>
-            </li>
-
-            <li>
-                <a href="/remedios">Remédios</a>
-            </li>
-
-            <li>
-                <a href="/farmacias" class="ativo">Farmácias</a>
-            </li>
-
-            <li>
-                <a href="/categorias">Categorias</a>
-            </li>
-
-            <li>
-                <a href="/sobre">Sobre</a>
-            </li>
-        </ul>
-
-    </nav>
-
-
-
-<!-- Bonequinho / Perfil -->
-<section class="perfil-menu">
-    <button class="perfil-botao" type="button">
-        <ion-icon name="person-outline"></ion-icon>
-    </button>
-    <section class="perfil-dropdown">
-        <p class="perfil-nome">bioclicky</p>
-        <a href="/perfil">Meu Perfil</a>
-        <a href="/logout" class="sair">Sair</a>
-    </section>
-</section>
-
-</header>
-
-    <main class="meuperfil-container">
-        <h1 class="meuperfil-titulo">Meu perfil</h1>
-        <section class="meuperfil-card">
-
-            <!-- INFORMAÇÕES DO USUÁRIO -->
-            <section class="meuperfil-topo">
-                <section class="meuperfil-icone">
-                    <ion-icon name="person-outline"></ion-icon>
-                </section>
-
-                <section class="meuperfil-identificacao">
-                    <h2>
-                        <%= nome %>
-                    </h2>
-                    <p>
-                        <%= email %>
-                    </p>
-                </section>
-            </section>
-
-
-            <!-- LINHA -->
-            <span class="meuperfil-linha"></span>
-
-            <!-- CAMPOS -->
-            <form action="/perfil" method="POST">
-
-                <!-- E-MAIL -->
-                <section class="meuperfil-campo">
-                    <label for="email">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        E-mail
-                    </label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value="<%= email %>"
-                        readonly
-                    >
-                </section>
-
-                <!-- TELEFONE -->
-
-                <section class="meuperfil-campo">
-
-                    <label for="telefone">
-                        <ion-icon name="call-outline"></ion-icon>
-                        Telefone
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="telefone"
-                        name="telefone"
-                        value="<%= telefone || '(11) 99999-9999' %>"
-                    >
-
-                </section>
-
-
-                <!-- LOCALIZAÇÃO -->
-
-                <section class="meuperfil-campo">
-
-                    <label for="localizacao">
-                        <ion-icon name="location-outline"></ion-icon>
-                        Localização
-                    </label>
-
-                    <input
-                        type="text"
-                        id="localizacao"
-                        name="localizacao"
-                        value="<%= localizacao || 'São Paulo - SP' %>"
-                    >
-
-                </section>
-
-
-                <!-- BOTÃO -->
-
-                <button
-                    type="submit"
-                    class="meuperfil-salvar">
-
-                    Salvar alterações
-
-                </button>
-
+    <%- include('../partials/header') %>
+    <main class="secao perfil-pagina">
+        <!-- Cabeçalho da página ou desta seção. -->
+        <header>
+            <span class="sobrelinha">Minha conta</span>
+            <h1>Olá, <%= nome %></h1>
+            <p>Atualize os dados usados para personalizar sua experiência.</p>
+        </header>
+        <!-- Agrupa uma seção do conteúdo. -->
+        <section class="perfil-card">
+            <!-- Mostra este trecho somente quando a condição for verdadeira. -->
+            <% if (salvo) { %>
+                <p class="mensagem sucesso">Alterações salvas com sucesso.</p>
+            <% } %>
+            <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+            <form
+                action="/perfil"
+                method="POST"
+            >
+                <label for="email">E-mail</label>
+                <input
+                    id="email"
+                    value="<%= email %>"
+                    readonly
+                >
+                <label for="telefone">Telefone</label>
+                <input
+                    id="telefone"
+                    name="telefone"
+                    type="tel"
+                    value="<%= telefone %>"
+                    placeholder="(11) 99999-9999"
+                >
+                <label for="localizacao">Cidade e estado</label>
+                <input
+                    id="localizacao"
+                    name="localizacao"
+                    value="<%= localizacao %>"
+                >
+                <button class="botao-principal">Salvar alterações</button>
             </form>
-
+            <!-- Envia os campos para a rota indicada em action; method define GET ou POST. -->
+            <form
+                action="/sair"
+                method="POST"
+            >
+                <button class="botao-secundario">Sair da conta</button>
+            </form>
         </section>
-
     </main>
-
+    <%- include('../partials/footer') %>
 </body>
 
 </html>

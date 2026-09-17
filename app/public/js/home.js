@@ -1,3 +1,4 @@
+// Arquivo antigo, mantido como referência. As páginas atuais carregam site.js.
 const botaoMenu = document.querySelector('.menu-mobile');
 const menu = document.querySelector('.menu');
 
