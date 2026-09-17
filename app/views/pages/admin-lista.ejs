@@ -23,22 +23,35 @@
                 type="button"
             >Adicionar</button>
         </header>
-        <!-- Agrupa uma seção do conteúdo. -->
-        <section class="admin-tabela">
-            <div class="tabela-cabecalho">
-                <span>Nome</span>
-                <span>Detalhes</span>
-                <span>Status</span>
-            </div>
-            <!-- Repete este trecho para cada item enviado pela rota. -->
-            <% itens.forEach(item => { %>
-                <article>
-                    <strong><%= item.nome %></strong>
-                    <span><%= item.detalhe %></span>
-                    <span class="status"><%= item.status %></span>
-                </article>
-            <% }) %>
-        </section>
+        <!-- A região pode ser rolada pelo teclado quando a tabela exceder a tela. -->
+        <div
+            class="admin-tabela"
+            role="region"
+            aria-label="Lista de <%= titulo.toLowerCase() %>"
+            tabindex="0"
+        >
+            <!-- Tabela nativa: associa cada valor ao cabeçalho da sua coluna. -->
+            <table>
+                <caption class="sr-only">Lista de <%= titulo.toLowerCase() %></caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Detalhes</th>
+                        <th scope="col"><%= tipo === 'medicamentos' ? 'Menor preço' : 'Status' %></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Cada registro é uma linha; o nome identifica essa linha. -->
+                    <% itens.forEach(item => { %>
+                        <tr>
+                            <th scope="row"><%= item.nome %></th>
+                            <td><%= item.detalhe %></td>
+                            <td class="status"><%= item.status %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
     </main>
 </body>
 

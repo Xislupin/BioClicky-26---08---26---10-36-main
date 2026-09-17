@@ -37,8 +37,8 @@
                 <button>Buscar</button>
             </div>
         </form>
-        <!-- Agrupa uma seção do conteúdo. -->
-        <section class="grade-farmacias">
+        <!-- Agrupa o layout; os títulos e conteúdos internos mantêm sua própria semântica. -->
+        <div class="grade-farmacias">
             <!-- Mostra este trecho somente quando a condição for verdadeira. -->
             <% if (!farmacias.length) { %>
                 <div class="vazio">
@@ -68,7 +68,7 @@
                     </div>
                 </article>
             <% }) %>
-        </section>
+        </div>
     </main>
     <%- include('../partials/footer') %>
 </body>

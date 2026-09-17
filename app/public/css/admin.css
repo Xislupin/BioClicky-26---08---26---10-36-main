@@ -283,8 +283,8 @@
     gap: 12px;
 }
 
-/* Estiliza .admin-estatisticas article. */
-.admin-estatisticas article {
+/* Estiliza .admin-estatisticas > div. */
+.admin-estatisticas > div {
     /* Define como os elementos são organizados. */
     display: grid;
     /* Define o espaço entre os itens. */
@@ -307,14 +307,14 @@
     font-size: 1.5rem;
 }
 
-/* Estiliza .admin-estatisticas span. */
-.admin-estatisticas span {
+/* Estiliza .admin-estatisticas dt. */
+.admin-estatisticas dt {
     /* Define a cor do texto ou do ícone. */
     color: var(--cinza);
 }
 
-/* Estiliza .admin-estatisticas strong. */
-.admin-estatisticas strong {
+/* Estiliza .admin-estatisticas dd. */
+.admin-estatisticas dd {
     /* Define o tamanho do texto. */
     font-size: 1.7rem;
 }
@@ -358,32 +358,54 @@
     font-weight: 700;
 }
 
-/* Estiliza .tabela-cabecalho,.admin-tabela article. */
-.tabela-cabecalho,
-.admin-tabela article {
-    /* Define como os elementos são organizados. */
-    display: grid;
-    /* Define a quantidade e a largura das colunas. */
-    grid-template-columns: 1fr;
-    /* Define o espaço entre os itens. */
-    gap: 4px;
-    /* Define o espaço interno nesta direção. */
-    padding: 14px 4px;
-    border-bottom: 1px solid var(--linha);
+/* Remove as margens nativas da lista de indicadores, preservando os cartões. */
+.admin-estatisticas {
+    margin: 0;
 }
 
-/* Estiliza .tabela-cabecalho. */
-.tabela-cabecalho {
-    /* Define como os elementos são organizados. */
-    display: none;
-    /* Define a cor do texto ou do ícone. */
-    color: var(--cinza);
-    /* Define o tamanho do texto. */
-    font-size: .8rem;
-    /* Define a espessura das letras. */
+.admin-estatisticas dt {
+    display: grid;
+    gap: 5px;
+}
+
+.admin-estatisticas dd {
+    margin: 0;
     font-weight: 700;
-    /* Altera a apresentação de maiúsculas e minúsculas. */
+}
+
+/* Mantém a rolagem dentro da tabela no celular, sem alargar a página. */
+.admin-main {
+    min-width: 0;
+}
+
+.admin-tabela {
+    overflow-x: auto;
+}
+
+/* Preserva a semântica nativa da tabela, com bordas e cores do painel. */
+.admin-tabela table {
+    width: 100%;
+    min-width: 480px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-tabela th,
+.admin-tabela td {
+    padding: 14px 8px;
+    border-bottom: 1px solid var(--linha);
+    overflow-wrap: anywhere;
+}
+
+.admin-tabela thead th {
+    color: var(--cinza);
+    font-size: .8rem;
     text-transform: uppercase;
+}
+
+/* O nome da linha continua com o mesmo destaque dos registros anteriores. */
+.admin-tabela tbody th {
+    font-weight: 700;
 }
 
 /* Estiliza .status. */
@@ -444,20 +466,4 @@
         grid-template-columns: repeat(4, 1fr)
     }
 
-    /* Estiliza .tabela-cabecalho,.admin-tabela article. */
-    .tabela-cabecalho,
-    .admin-tabela article {
-        /* Define como os elementos são organizados. */
-        display: grid;
-        /* Define a quantidade e a largura das colunas. */
-        grid-template-columns: 1.2fr 1fr .7fr;
-        /* Define o espaço entre os itens. */
-        gap: 15px
-    }
-
-    /* Estiliza .tabela-cabecalho. */
-    .tabela-cabecalho {
-        /* Define como os elementos são organizados. */
-        display: grid
-    }
 }

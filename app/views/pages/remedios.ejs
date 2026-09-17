@@ -25,7 +25,7 @@
             class="filtros"
             role="search"
         >
-            <!-- Identifica o campo pelo mesmo valor de for e id. -->
+            <!-- O label envolve o campo e associa seu texto a ele, mesmo sem for e id. -->
             <label>
                 <span>Buscar medicamento</span>
                 <input
@@ -35,7 +35,7 @@
                     placeholder="Nome, laboratório ou princípio ativo"
                 >
             </label>
-            <!-- Identifica o campo pelo mesmo valor de for e id. -->
+            <!-- O label envolve o campo e associa seu texto a ele, mesmo sem for e id. -->
             <label>
                 <span>Categoria</span>
                 <select name="categoria">
@@ -55,8 +55,8 @@
         <p class="resultado">
             <strong><%= remedios.length %> </strong> medicamento(s) encontrado(s)
         </p>
-        <!-- Agrupa uma seção do conteúdo. -->
-        <section
+        <!-- Agrupa o layout; os títulos e conteúdos internos mantêm sua própria semântica. -->
+        <div
             class="lista-remedios"
             aria-live="polite"
         >
@@ -91,7 +91,7 @@
                     </div>
                 </article>
             <% }) %>
-        </section>
+        </div>
     </main>
     <%- include('../partials/footer') %>
 </body>
