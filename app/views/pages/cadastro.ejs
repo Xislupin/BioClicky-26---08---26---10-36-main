@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta - BioClicky</title>
+
+    <link rel="stylesheet" href="/css/login.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    
+</head>
+<body>
+
+<main>
+
+    <section class="left">
+
+        <header class="logo">
+                <img src="/imagens/logo-header/logo-e-titulo.png" alt="BioClicky">
+            <h1></h1>
+        </header>           
+
+        <h2>Crie sua conta</h2>
+
+        <p>
+            Junte-se a milhares de pessoas economizando em medicamentos.
+        </p>
+
+    </section>
+
+    <section class="right">
+
+        <form action="/cadastro" method="POST">
+
+            <h2>Criar conta</h2>
+
+            <% if(typeof erro !== 'undefined' && erro){ %>
+    <section class="erro">
+        <%= erro %>
+    </section>
+<% } %> 
+
+            <p>
+                Preencha os dados abaixo para começar.
+            </p>
+
+            <label>Nome</label>
+
+            <input
+                type="text"
+                name="nome"
+                placeholder="Seu nome completo"
+                required
+            >
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="seu@email.com"
+                required
+            >
+
+           <label for="senha">Senha</label>
+
+<label class="password">
+
+    <input
+        id="senha"
+        type="password"
+        name="senha"
+        placeholder="Mínimo 6 caracteres"
+        required
+    >
+
+    <ion-icon id="toggleSenha" name="eye-outline"></ion-icon>
+
+</label>
+            <label>Confirmar senha</label>
+
+            <input
+                type="password"
+                name="confirmarSenha"
+                placeholder="••••••••"
+                required
+            >
+
+            <button type="submit">
+                Criar conta
+            </button>
+
+            <section class="separator">
+                <hr>
+                <span>ou</span>
+                <hr>
+            </section>
+
+            <button type="button" class="google">
+
+                <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                alt="Google">
+
+                Continuar com Google
+
+            </button>
+
+            <p class="login-link">
+                Já tem uma conta?
+                <a class="entrar" href="/login">Entrar</a>
+            </p>
+
+        </form>
+
+    </section>
+
+</main>
+<script> src="/js/login.js"</script>
+</body>
+</html>
+

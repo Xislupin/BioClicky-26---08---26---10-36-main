@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioClicky</title>
+
+    <link rel="stylesheet" href="/css/login.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   
+</head>
+<body>
+
+<main>
+
+    <section class="left">
+
+        <header class="logo">
+                <img src="/imagens/logo-header/bioclicky_branco.png" alt=""
+            <h1> </h1>
+        </header>
+
+        <h2>Bem-vindo ao BioClicky</h2>
+
+        <p>
+            Compare preços de medicamentos e economize no seu tratamento.
+        </p>
+
+    </section>
+
+    <section class="right">
+
+        <form action="/login" method="POST">
+
+            <% if(typeof erro !== 'undefined' && erro){ %>
+                <div class="erro">
+                    <%= erro %>
+                </div>
+            <% } %>
+
+            <h2>Entrar</h2>
+
+            <p>
+                Acesse sua conta para buscar remédios.
+            </p>
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="seu@email.com"
+                required
+            >
+
+            <section class="senha-top">
+                <label>Senha</label>
+
+                <a href="/senha">
+                    Esqueceu a senha?
+                </a>
+            </section>
+
+       
+
+<label class="password">
+
+    <input
+        id="senha"
+        type="password"
+        name="senha"
+        placeholder="Mínimo 6 caracteres"
+        required
+    >
+
+    <ion-icon id="toggleSenha" name="eye-outline"></ion-icon>
+
+</label>
+            
+
+            <button type="submit">
+                Entrar
+            </button>
+
+            <section class="separator">
+                <hr>
+                <span>ou</span>
+                <hr>
+            </section>
+
+            <button type="button" class="google">
+                <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                    alt="Google">
+                Continuar com Google
+            </button>
+
+            <p class="register">
+                Não tem uma conta?
+                <a href="/cadastro">Criar conta</a>
+            </p>
+
+        </form>
+
+    </section>
+
+</main>
+<script> src="/js/login.js"</script>
+</body>
+</html>

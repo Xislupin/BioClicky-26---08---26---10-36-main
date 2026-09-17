@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Administrativo - BioClicky</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+<main class="admin-login-container">
+  <form action="/admin/login" method="POST">
+    <header>
+      <h1>BioClicky</h1>
+    </header>
+
+    <section class="admin-badge">
+      <ion-icon name="shield-checkmark-outline"></ion-icon> Acesso Administrativo
+    </section>
+
+    <h2>Área restrita</h2>
+    <p>Somente administradores autorizados</p>
+
+    <label for="email">Email</label>
+    <label class="input-container">
+      <ion-icon name="mail-outline" class="field-icon"></ion-icon>
+      <input type="email" id="email" name="email" value="admin@bioclicky.com.br" required>
+    </label>
+
+    <label for="senha">Senha</label>
+    <label class="input-container">
+      <ion-icon name="lock-closed-outline" class="field-icon"></ion-icon>
+      <input type="password" id="senha" name="senha" required>
+      <ion-icon name="eye-outline" id="toggleSenha" class="toggle-icon"></ion-icon>
+    </label>
+
+    <button type="submit">Entrar como Admin</button>
+
+
+    <a href="/" class="back-link">← Voltar ao site</a>
+  </form>
+</main>
+
+<script>
+  const olho = document.getElementById("toggleSenha");
+  const senhaInput = document.getElementById("senha");
+
+  olho.addEventListener("click", () => {
+      if (senhaInput.type === "password") {
+          senhaInput.type = "text";
+          olho.setAttribute("name", "eye-off-outline");
+      } else {
+          senhaInput.type = "password";
+          olho.setAttribute("name", "eye-outline");
+      }
+  });
+</script>
+
+</body>
+</html>

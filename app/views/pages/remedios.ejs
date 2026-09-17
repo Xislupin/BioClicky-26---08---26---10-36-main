@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Remédios - BioClicky</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="/js/filtro-remedios.js" defer></script>
+</head>
+
+<body class="internal-body">
+<header class="cabecalho">
+    <a href="/" class="logo">
+        <img src="/imagens/logo-header/logo-e-titulo.png" alt="BioClicky">
+    </a>
+    <nav class="menu-container">
+        <span class="indicador"></span>
+        <ul class="menu">
+            <li><a href="/">Início</a></li>
+            <li><a href="/remedios" class="ativo">Remédios</a></li>
+            <li><a href="/farmacias">Farmácias</a></li>
+            <li><a href="/categorias">Categorias</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+        </ul>
+    </nav>
+    <!-- Bonequinho / Perfil -->
+    <section class="perfil-menu">
+        <button class="perfil-botao" type="button">
+            <ion-icon name="person-outline"></ion-icon>
+        </button>
+        <section class="perfil-dropdown">
+            <p class="perfil-nome">bioclicky</p>
+            <a href="/perfil">Meu Perfil</a>
+            <a href="/logout" class="sair">Sair</a>
+        </section>
+    </section>
+</header>
+
+<section class="remedios-section">
+
+    <header class="remedios-topo">
+        <h1>Remédios</h1>
+    </header>
+
+    <section class="categorias-filtro">
+        <button class="seta-categoria">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+
+        <button class="chip ativo">Todos</button>
+        <button class="chip">Dor de Cabeça</button>
+        <button class="chip">Febre</button>
+        <button class="chip">Inflamação</button>
+        <button class="chip">Alergia</button>
+        <button class="chip">Diabetes</button>
+        <button class="chip">Pressão Alta</button>
+        <button class="chip">Gripe e Resfriado</button>
+        <button class="chip">Digestão</button>
+
+        <button class="seta-categoria">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+    </section>
+
+    <section class="barra-filtros">
+
+        <label class="busca-remedio">
+            <ion-icon name="search-outline"></ion-icon>
+            <input type="text" id="searchInput" placeholder="Buscar remédio..." autocomplete="off">
+        </label>
+
+        <select class="ordenar-select">
+            <option>Menor preço</option>
+            <option>Maior preço</option>
+            <option>Nome (A-Z)</option>
+        </select>
+
+        <button class="botao-filtro">
+            <ion-icon name="options-outline"></ion-icon>
+            Filtros
+        </button>
+    </section>
+
+    <section class="lista-remedios">
+
+        <a href="/remedio/dipirona-500mg" class="remedio-card">
+            <section class="remedio-icone">
+                <img src="/imagens/remedios/dipirona.webp" alt="Dipirona 500mg">
+            </section>
+
+            <section class="remedio-info">
+                <h3>Dipirona 500mg</h3>
+                <span>Medley</span>
+                <small>Analgésico e antitérmico</small>
+            </section>
+
+            <section class="remedio-preco">
+                <small>A partir de</small>
+                <strong>R$ 7,90</strong>
+                <span>8 ofertas</span>
+            </section>
+
+            <ion-icon name="chevron-forward-outline" class="seta-card"></ion-icon>
+        </a>
+
+        <a href="/remedio/dorflex" class="remedio-card">
+            <section class="remedio-icone">
+                <img src="/imagens/remedios/dorflex.webp" alt="Dorflex">
+            </section>
+
+            <section class="remedio-info">
+                <h3>Dorflex</h3>
+                <span>Sanofi</span>
+                <small>Relaxante muscular e analgésico</small>
+            </section>
+
+            <section class="remedio-preco">
+                <small>A partir de</small>
+                <strong>R$ 8,90</strong>
+                <span>5 ofertas</span>
+            </section>
+
+            <ion-icon name="chevron-forward-outline" class="seta-card"></ion-icon>
+        </a>
+
+        <a href="/remedio/cetirizina-10mg" class="remedio-card">
+            <section class="remedio-icone">
+                <img src="/imagens/remedios/cetirizina.webp" alt="Cetirizina 10mg">
+            </section>
+
+            <section class="remedio-info">
+                <h3>Cetirizina 10mg</h3>
+                <span>Medley</span>
+                <small>Antialérgico de segunda geração</small>
+            </section>
+
+            <section class="remedio-preco">
+                <small>A partir de</small>
+                <strong>R$ 11,80</strong>
+                <span>3 ofertas</span>
+            </section>
+
+            <ion-icon name="chevron-forward-outline" class="seta-card"></ion-icon>
+        </a>
+
+        <a href="/remedio/paracetamol-750mg" class="remedio-card">
+            <section class="remedio-icone">
+                <img src="/imagens/main-1/...x" alt="Paracetamol 750mg">
+            </section>
+
+            <section class="remedio-info">
+                <h3>Paracetamol 750mg</h3>
+                <span>Cimed</span>
+                <small>Analgésico e antitérmico</small>
+            </section>
+
+            <section class="remedio-preco">
+                <small>A partir de</small>
+                <strong>R$ 11,90</strong>
+                <span>6 ofertas</span>
+            </section>
+
+            <ion-icon name="chevron-forward-outline" class="seta-card"></ion-icon>
+        </a>
+
+    </section>
+
+</section>
+
+<footer class="footer">
+    <section class="footer-container">
+        <section>
+            <img src="/imagens/logo-header/logo-branca.png" alt="BioClicky" class="footer-logo">
+            <p>
+                Plataforma para comparação de preços de medicamentos
+                em farmácias próximas de você.
+            </p>
+        </section>
+
+        <section>
+            <h3>Navegação</h3>
+            <a href="/">Início</a>
+            <a href="/remedios">Remédios</a>
+            <a href="/farmacias">Farmácias</a>
+            <a href="/categorias">Categorias</a>
+        </section>
+
+        <section>
+            <h3>Institucional</h3>
+            <a href="/sobre">Sobre nós</a>
+            <a href="#">Termos de uso</a>
+            <a href="#">Privacidade</a>
+        </section>
+
+        <section>
+            <h3>Contato</h3>
+            <p>contato@bioclicky.com.br</p>
+            <p>(11) 99999-9999</p>
+        </section>
+    </section>
+
+    <section class="footer-bottom">
+        © 2026 BioClicky. Todos os direitos reservados.
+    </section>
+</footer>
+
+</body>
+</html>

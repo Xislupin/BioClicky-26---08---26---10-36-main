@@ -1,0 +1,453 @@
+/* =========================================================
+   ADMIN - PÁGINA
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #020811;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FUNDO
+========================================================= */
+
+.admin-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(20, 52, 65, 0.18),
+            transparent 40%
+        ),
+        #020811;
+}
+
+
+/* =========================================================
+   CARD ADMIN
+========================================================= */
+
+.admin-card {
+    width: 100%;
+    max-width: 448px;
+    padding: 32px;
+    background: #111b2b;
+    border: 1px solid #273449;
+    border-radius: 23px;
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 23px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 36px;
+}
+
+.logo-icon ion-icon {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.admin-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 16px;
+
+    border-radius: 30px;
+
+    background: rgba(26, 199, 133, 0.12);
+
+    color: #21d78d;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    margin-bottom: 16px;
+}
+
+.admin-badge ion-icon {
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.admin-header h1 {
+    font-size: 24px;
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+
+    color: #ffffff;
+}
+
+.admin-header p {
+    color: #687994;
+
+    font-size: 14px;
+
+    margin-bottom: 34px;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+}
+
+.admin-form label {
+    margin-bottom: 7px;
+
+    color: #a9b9ce;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-box {
+    width: 100%;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 0 18px;
+    padding: 0.5rem 1rem;
+
+    background-color: transparent;
+
+    border: 1px solid #35445a;
+    border-radius: 16px;
+
+    transition: 0.2s ease;
+}
+
+.input-box:focus-within {
+    border-color: #28d58c;
+
+    box-shadow:
+        0 0 0 2px rgba(40, 213, 140, 0.08);
+}
+
+.input-box > ion-icon {
+    flex-shrink: 0;
+
+    color: #69798f;
+
+    font-size: 18px;
+
+    margin-right: 12px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+.input-box input::placeholder {
+    color: #596a81;
+}
+
+
+/* =========================================================
+   SENHA
+========================================================= */
+
+.password-box {
+    margin-bottom: 24px;
+}
+
+.show-password {
+    width: 25px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #718198;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.show-password:hover {
+    color: #a9b9ce;
+}
+
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.admin-button {
+    width: 100%;
+    height: 52px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: #2dcc82;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.admin-button:hover {
+    background: #27c77c;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 25px rgba(45, 204, 130, 0.18);
+}
+
+.admin-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   DEMO
+========================================================= */
+
+.demo {
+    width: 100%;
+
+    margin-top: 20px;
+    padding: 13px 10px;
+
+    border: 1px solid #2b394c;
+    border-radius: 15px;
+
+    background: #182435;
+
+    color: #71839b;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+.demo::first-line {
+    color: #71839b;
+}
+
+
+/* =========================================================
+   LINK VOLTAR
+========================================================= */
+
+.back-link {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: #526781;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.back-link:hover {
+    color: #8da0b9;
+}
+
+
+/* =========================================================
+   MENSAGEM DE ERRO
+========================================================= */
+
+.error-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    margin-bottom: 18px;
+    padding: 11px 14px;
+
+    border: 1px solid rgba(255, 80, 80, 0.25);
+    border-radius: 12px;
+
+    background: rgba(255, 70, 70, 0.08);
+
+    color: #ff7777;
+
+    font-size: 13px;
+}
+
+.error-message ion-icon {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .admin-page {
+        padding: 20px;
+    }
+
+    .admin-card {
+        padding: 28px 22px;
+
+        border-radius: 20px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .admin-header h1 {
+        font-size: 22px;
+    }
+}
+
+
+@media (max-height: 700px) {
+
+    .admin-page {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .admin-card {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .logo {
+        margin-bottom: 16px;
+    }
+
+    .admin-header p {
+        margin-bottom: 22px;
+    }
+}
+
+.input-box input {
+    background: transparent !important;
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    text-align: center;
+}
+
+.input-box input:focus {
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none;
+}

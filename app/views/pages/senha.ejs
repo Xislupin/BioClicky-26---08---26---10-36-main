@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha - BioClicky</title>
+
+    <link rel="stylesheet" href="/css/login.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+
+<main>
+
+    <section class="left">
+
+        <header class="logo">
+            <ion-icon name="medical"></ion-icon>
+            <h1>BioClicky</h1>
+        </header>
+
+        <h2>Recuperar Senha</h2>
+
+        <p>
+            Informe seu e-mail para receber um link de recuperação.
+        </p>
+
+    </section>
+
+    <section class="right">
+
+        <form action="/forgot-password" method="POST">
+
+            <h2>Esqueceu a senha?</h2>
+
+            <p>
+                Digite o e-mail cadastrado na sua conta.
+            </p>
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="seu@email.com"
+                required
+            >
+
+            <button type="submit">
+                Enviar Link
+            </button>
+
+            <p class="register">
+                Lembrou sua senha?
+                <a href="/login">Voltar para login</a>
+            </p>
+
+        </form>
+
+    </section>
+
+</main>
+
+</body>
+</html>
